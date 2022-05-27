@@ -1,0 +1,55 @@
+#loginSection {
+    position: relative;
+    height: 600px;
+    margin: 180px 0;
+}
+
+#loginSection form {
+    width: 400px;
+    height: 450px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    padding: 10px 0;
+}
+
+#loginSection input[type='text'], input[type='password'] {
+    width: 300px;
+    height: 40px;
+    border: 1px solid #fcb69f;
+    border-radius: 5px;
+    padding: 0 10px;
+    margin-bottom: 10px;
+}
+
+#loginBtn {
+    text-decoration: none;
+    background-color: #fcb69f;
+    color: white;
+    width: 300px;
+    height: 50px;
+    font-size: 17px;
+    border: none;
+    border-radius: 5px;
+    margin: 20px 0 30px 0;
+    display: inline-block;
+    padding: 13px 0;
+}
+
+#loginSection h3 {
+    font-size: 50px;
+    margin: 50px 0;
+}
+
+#loginSection #msg {
+    height: 30px;
+    text-align: center;
+    font-size: 16px;
+    color: red;
+    margin-bottom: 20px;
+}

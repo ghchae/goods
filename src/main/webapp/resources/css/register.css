@@ -1,0 +1,107 @@
+
+#register-section {
+    position: relative;
+    height: 750px;
+    margin: 180px 0;
+}
+#register-section form {
+    width:400px;
+    padding-top: 40px;
+    display : flex;
+    flex-direction: column;
+    align-items:center;
+    position : absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%) ;
+    /*border: 1px solid #ffecd2;*/
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+#register-section input {
+    width: 300px;
+    height: 40px;
+    border : 1px solid #fcb69f;
+    border-radius:5px;
+    padding: 0 10px;
+    margin-bottom: 10px;
+}
+
+#register-section label {
+    width:300px;
+    height:30px;
+    margin-top :4px;
+}
+#userJoin {
+    background-color: #fcb69f;
+    color : white;
+    width:300px;
+    height:50px;
+    font-size: 17px;
+    border : none;
+    border-radius: 5px;
+    margin : 20px 0 30px 0;
+    padding: 10px;
+    text-align: center;
+}
+.msg {
+    height: 30px;
+    text-align:center;
+    font-size:16px;
+    color:red;
+    margin-bottom: 20px;
+}
+
+.sns-chk {
+    margin-top : 5px;
+}
+
+/* ### registerConfirm */
+
+#registerConfirm-section {
+    position: relative;
+    height: 600px;
+    margin: 180px 0;
+}
+#registerConfirmBlock {
+    width: 400px;
+    height: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    border-radius: 20px;
+}
+.resultBlockTxt {
+    position: relative;
+    height: 250px;
+}
+.resultBlockTxt h3 {
+    position: absolute;
+    color: #555;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    font-size: 20px;
+    font-weight: 800;
+}
+.resultBlock-inner {
+    height: 250px;
+    display: flex;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.resultBlock {
+    background-color: #fcb69f;
+    width: 200px;
+    padding: 15px;
+    border-radius: 10px;
+    margin: auto;
+    font-size: 17px;
+}

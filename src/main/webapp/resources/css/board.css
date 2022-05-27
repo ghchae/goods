@@ -1,0 +1,157 @@
+.boardSection {
+    position: relative;
+    height: 600px;
+    margin: 180px 0;
+}
+
+#noticeBoard button,
+input {
+    border: none;
+    outline: none;
+}
+
+#noticeBoard .board-container {
+    width: 60%;
+    margin: 0 auto;
+    /* border: 1px solid black; */
+}
+
+#noticeBoard .search-container {
+    background-color: rgb(253, 253, 250);
+    width: 100%;
+    height: 110px;
+    border: 1px solid #ddd;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#noticeBoard .search-form {
+    height: 37px;
+    display: flex;
+}
+
+#noticeBoard .search-option {
+    width: 100px;
+    height: 100%;
+    outline: none;
+    margin-right: 5px;
+    border: 1px solid #ccc;
+    color: gray;
+}
+
+#noticeBoard .search-option > option {
+    text-align: center;
+}
+
+#noticeBoard .search-input {
+    color: gray;
+    background-color: white;
+    border: 1px solid #ccc;
+    height: 100%;
+    width: 300px;
+    font-size: 15px;
+    padding: 5px 7px;
+}
+
+#noticeBoard .search-input::placeholder {
+    color: gray;
+}
+
+#noticeBoard .search-button {
+    /* 메뉴바의 검색 버튼 아이콘  */
+    width: 20%;
+    height: 100%;
+    background-color: rgb(22, 22, 22);
+    color: rgb(209, 209, 209);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+}
+
+.board-table th,
+td {
+    width: 300px;
+    text-align: center;
+    /*padding: 10px 12px;*/
+    border-bottom: 1px solid #ddd;
+}
+
+#noticeBoard .paging {
+    color: black;
+    width: 100%;
+    align-items: center;
+}
+
+#noticeBoard .page {
+    color: black;
+    padding: 6px;
+    margin-right: 10px;
+}
+
+#noticeBoard .paging-active {
+    background-color: rgb(216, 216, 216);
+    border-radius: 5px;
+    color: rgb(24, 24, 24);
+}
+
+#noticeBoard .paging-container {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    margin-top: 50px;
+    margin: auto;
+}
+
+#noticeBoard .btn-write {
+    background-color: rgb(236, 236, 236); /* Blue background */
+    border: none; /* Remove borders */
+    color: black; /* White text */
+    padding: 6px 12px; /* Some padding */
+    font-size: 16px; /* Set a font size */
+    cursor: pointer; /* Mouse pointer on hover */
+    border-radius: 5px;
+    margin-left: 30px;
+}
+
+#noticeBoard .btn-write:hover {
+    text-decoration: underline;
+}
+
+/* */
+.board-table {
+    background-color: #fff;
+    border-collapse: collapse; /* spacing 이 없는 테이블을 만들 수 있다.*/
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
+
+.board-table tr {
+    border-bottom: 1px solid #eee;
+}
+
+.board-table tr:last-child {
+    border: none;
+}
+
+.board-table th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+.board-table tr th {
+    background-color: #ffecd2;
+    color: black;
+}
+
+.board-table tr:nth-child(odd) {
+    background-color: #eee;
+    /*#f0f0f070*/
+}
+
+.board-table td.title:hover {
+    text-decoration: underline;
+}
+

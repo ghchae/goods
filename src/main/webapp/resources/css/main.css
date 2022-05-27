@@ -1,0 +1,538 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+* {
+    box-sizing: border-box;/* 패딩값을 줘도 width에 알맞게 크기가 변하지않음 */
+    font-family: 'Noto Sans KR', sans-serif;
+    outline: none;/* input 또는 button등의 바깥 라인을 없앰 */
+}
+
+body {
+    margin: 0;
+    font-weight: 500;/* default: 600 */
+    color: #222;
+    line-height: 1.6em;
+    background-color: #fafafa;
+    font-size: 15px;
+}
+
+a {
+    text-decoration: none;
+    color: #222;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-weight: 500;
+    margin-top: 0;
+}
+/* #### lnb #### */
+.lnb {
+    width: 1450px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+    box-sizing: border-box;
+}
+.logo {
+    text-transform: capitalize;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1.2em;
+}
+.logo span {
+    display: block;
+    text-align: right;
+}
+.lnb-nav a:hover {
+    color: dodgerblue;
+}
+.lnb-nav a:nth-child(1)::after {
+    content: ' |';
+}
+/* #### gnb #### */
+.gnb-outer {
+    background-image: linear-gradient(to left, #ffecd2 0%, #fcb69f 100%);
+}
+.gnb-outer nav {
+    width: 1450px;
+    margin: auto;
+    position: relative;
+}
+.gnb {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    padding-left: 25px;
+}
+
+.gnb li {
+    height: 50px;
+    line-height: 50px;
+    cursor: pointer;
+    position: relative;
+}
+.gnb li:not(.gnb li:last-child) {
+    flex: 1;
+}
+.gnb li > a {
+    text-transform: uppercase;
+}
+.gnb li:last-child {
+    width: 50px;
+    position: relative;
+}
+
+/* gnb 햄버거 버튼 */
+.trigger {
+    width: 25px;
+    height: 14px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+.trigger span {
+    position: absolute;
+    left: 10%;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    transition: 0.35s;
+}
+.trigger span:nth-child(1) {
+    top: 0;
+}
+.trigger span:nth-child(2) {
+    top: 50%;
+}
+.trigger span:nth-child(3) {
+    top: 100%;
+}
+
+.gnb li:last-child.active {
+    background-color: #fff;
+}
+
+/* 햄버거 버튼 클릭시 X로 만들기 */
+.trigger.active span:nth-child(1) {
+    top: 50%;
+    transform: rotate(45deg);
+}
+.trigger.active span:nth-child(2) {
+    opacity: 0;
+}
+.trigger.active span:nth-child(3) {
+    top: 50%;
+    transform: rotate(-45deg);
+}
+/* #### 햄버거 눌렸을때 보이는 map #### */
+.site-map {
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    padding: 20px 0 60px 0;
+    box-shadow: 5px 5px 10px -5px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    z-index: 2;
+}
+.site {
+    display: flex;
+    padding-left: 20px;
+}
+.site div {
+    line-height: 2em;
+}
+.site div:not(div:last-child) {
+    flex: 1;
+}
+.site div:last-child {
+    width: 50px;
+}
+.site div b {
+    font-weight: 600;
+    font-size: 16px;
+}
+.site div a {
+    display: block;
+}
+.site div a:hover {
+    color: dodgerblue;
+}
+.site div a::before {
+    content: '- ';
+}
+
+/* #### dropdown #### */
+.dropdown {
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    box-shadow: 0 0 10px #ffecd2;
+    z-index: 2;
+}
+.dropdown a {
+    display: block;
+    padding-left: 10px;
+    background-color: #ffecd2;
+}
+.gnb li:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* #### section1 #### */
+/* 아이템 카드 를 만들어보자*/
+#item-section {
+    margin-top: 150px;
+}
+.items-inner {
+    width: 1450px;
+    margin: auto;
+}
+.items-inner h2 {
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+.items {
+    display: flex;
+    gap: 30px;
+    /* 순번 */
+    counter-reset: item;
+}
+.item {
+    flex: 1;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+/* 순번카드 */
+.item::before {
+    content: counter(item);
+    counter-increment: item;
+    position: absolute;
+    text-align: center;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    color: #ffecd2;
+    background-color: #aaa;
+    border-radius: 0 0 10px 0;
+}
+
+.item:hover {
+    transform: scale(1.1);
+}
+.item:hover::before {
+    background-color: crimson;
+}
+
+/* 아이템 사진정렬 */
+.item .photo {
+    position: relative;
+    height: 390px;
+    cursor: pointer;
+}
+.item .photo a img {
+    position: absolute;
+    width: 100%;
+    z-index: -2;
+    transition: 0.9s;
+}
+.item .photo a:first-child img {
+    z-index: -1;
+}
+.item .photo:hover a:first-child img {
+    opacity: 0;
+}
+
+.item .detail {
+    position: relative;
+    font-size: 14px;
+    margin: 10px 0 0 10px;
+}
+.item .detail span {
+    display: block;
+}
+.item .detail .price {
+    color: crimson;
+}
+.item .detail .price b {
+    margin-right: 10px;
+}
+.item .detail .name {
+    font-weight: 400;
+}
+.item .detail .count {
+    font-size: 13px;
+    color: #777;
+}
+.item .detail .count b {
+    margin-right: 2px;
+    font-weight: 400;
+}
+
+.item .detail .like {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 5px;
+    right: 5px;
+    font-size: 18px;
+    line-height: 20px;
+    cursor: pointer;
+}
+/* 유니 코드 사용 */
+.item .detail .like::before {
+    content:"\f08a";
+    font-family: fontawesome;
+    color: #999;
+}
+
+.item .detail .like.active::before {
+    content:"\f004";
+    color: crimson;
+}
+/* ######################################################## section2 ########################## */
+#section2 {
+    background-color: #fff;
+    height: 600px;
+    margin-top: 70px;
+    position: relative;
+}
+
+.section2-inner {
+    width: 1450px;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+}
+.section2-inner .heading {
+    font-weight: 600;
+    font-size: 25px;
+}
+#section2 .goods {
+    display: flex;
+    gap: 30px;
+}
+#section2 .good {
+    flex: 1;
+    text-align: center;
+    position: relative;
+}
+#section2 .good-list {
+    padding: 30px;
+}
+#section2 .good:nth-child(1) .good-list {
+    background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
+}
+#section2 .good:nth-child(2) .good-list {
+    background-image: linear-gradient(-45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+}
+#section2 .good:nth-child(3) .good-list {
+    background-image: linear-gradient(to right, #fad0c4 0%, #ffd1ff 100%);
+}
+#section2 .good-list .btn {
+    background-color: #727068;
+    color: #eee;
+    padding: 5px;
+    width: 80px;
+    border-radius: 20px;
+    display: inline-block;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+#section2 .good-desc {
+    display: none;
+    position: absolute;
+    width: 100%;
+    padding: 20px 10px;
+    color: #555;
+}
+
+#section2 .good:hover .good-desc {
+    display: block;
+}
+#section2 .good:nth-child(1) .good-desc {
+    border: 1px solid #fcb69f;
+}
+#section2 .good:nth-child(2) .good-desc {
+    border: 1px solid #fad0c4;
+}
+#section2 .good:nth-child(3) .good-desc {
+    border: 1px solid #ffd1ff;
+}
+#section2 .good-desc ul {
+    background-color: #fafafa;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    font-weight: 300;
+}
+#section2 .good-desc ul li::before {
+    content: '- ';
+    margin: 0 10px;
+}
+
+
+/* #### section2 end #### */
+
+
+/* #### footer #### */
+footer {
+    background-color: #BBB8A5;
+    padding: 30px 0;
+}
+.footer-inner {
+    width: 1450px;
+    margin: auto;
+    display: flex;
+}
+.copyright {
+    flex:1;
+    margin-top: 20px;
+    padding-left: 20px;
+    /* border: 1px solid red; */
+}
+.copyright .policy a {
+    color: #555;
+}
+.copyright .policy a:first-child {
+    color: #727068;
+}
+.copyright .policy a:first-child::after {
+    content: ' | ';
+    font-size: 13px;
+
+}
+.copyright .info p {
+    font-size: 13px;
+    color: #555;
+}
+
+/* foote, 사이트맵 드롭다운 */
+.site-dropdown-frame {
+    flex:1;
+    position: relative;
+}
+.site-dropdown {
+    position: absolute;
+    background-color: #aaa;
+    top: 10%;
+    left: 50%;
+    width: 150px;
+    padding: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.site-dropdown .title {
+    position: relative;
+    /* text-transform: uppercase; */
+    /* color: #727068; */
+    letter-spacing: 0.05em;
+    color: #555;
+    cursor: pointer;
+}
+.site-dropdown .title::after {
+    content: '\f107';
+    position: absolute;
+    font-family: fontawesome;
+    right: 5px;
+}
+.site-dropdown .title.active::after {
+    transform: rotate(180deg);
+}
+.site-dropdown .sub-nav {
+    display: none;
+    position: absolute;
+    background-color: #bbb;
+    text-transform: uppercase;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.site-dropdown .sub-nav li a {
+    display: block;
+    border-bottom: 1px solid #aaa;
+    padding: 5px;
+    letter-spacing: 0.05em;
+}
+.site-dropdown .sub-nav li:last-child a {
+    border: none;
+}
+/* #### section3, 게시판 #### */
+.board-inner {
+    /* background-color: crimson; */
+    width: 1280px;
+    height: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    margin: auto;
+}
+.notice {
+    width: 300px;
+    height: 200px;
+}
+.notice .title {
+    display: flex;
+    margin-bottom: 10px;
+}
+.notice .title h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    font-weight: 600;
+    flex: 1;
+}
+.notice .title a {
+    font-size: 15px;
+    font-weight: 400;
+    text-decoration: underline;
+    text-underline-position: under;
+}
+.notice table {
+    border-collapse: collapse;
+    width: 100%;
+}
+.notice table td:last-child {
+    text-align: right;
+}
+
+.event {
+    width: 300px;
+    height: 200px;
+}
+.event .title {
+    display: flex;
+    margin-bottom: 10px;
+}
+.event .title h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    font-weight: 600;
+    flex: 1;
+}
+.event .title a {
+    font-size: 15px;
+    font-weight: 400;
+    text-decoration: underline;
+    text-underline-position: under;
+}
+#loginIdtxt {
+    color: #fcb69f;
+    text-transform: uppercase;
+    font-weight: 600;
+}

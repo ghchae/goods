@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.portfolio.goods.dao.UserMapper">
+    <!-- Register -->
+    <select id="selectUser" resultType="UserDto">
+        SELECT *
+        FROM user;
+    </select>
+
+    <select id="selectOneUserById" parameterType="UserDto" resultType="UserDto">
+        SELECT *
+        from user
+        where userId = #{userId}
+    </select>
+
+    <select id="selectOneUserByPhoneNum" parameterType="UserDto" resultType="UserDto">
+        SELECT *
+        FROM user
+        WHERE phoneNum = #{phoneNum}
+           OR email = #{email}
+    </select>
+
+    <insert id="insertUser" parameterType="UserDto">
+        INSERT INTO user (userId, name, password, birth, email, phoneNum, reg_date)
+        VALUES (#{userId}, #{name}, #{password}, #{birth}, #{email}, #{phoneNum}, now())
+    </insert>
+
+    <delete id="deleteAllUser">
+        DELETE
+        FROM user
+    </delete>
+
+    <!-- Login -->
+</mapper>
