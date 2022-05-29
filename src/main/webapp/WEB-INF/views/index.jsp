@@ -4,7 +4,6 @@
 <html>
 <head>
     <title>메인페이지</title>
-    <link rel="stylesheet" href="<c:url value='/resources/css/main.css'/>">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 <body>
