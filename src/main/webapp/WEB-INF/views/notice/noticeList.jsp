@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ include file="/WEB-INF/views/top.jsp" %>
 <html>
 <head>
@@ -26,11 +26,13 @@
                         <input type="submit" class="search-button" value="검색">
                     </select>
                 </form>
-                <button id="writeBtn" class="btn-write"
-                        onclick="location.href='<c:url
-                                value="/notice/write?page=${pageHandler.sc.page}&pageSize=${pageHandler.sc.pageSize}"/>'">
-                    <i class="fa fa-pencil"></i> 글쓰기
-                </button>
+                <div>
+                    <button id="writeBtn" class="btn-write"
+                            onclick="location.href='<c:url
+                                    value="/notice/write?page=${pageHandler.sc.page}&pageSize=${pageHandler.sc.pageSize}"/>'">
+                        <i class="fa fa-pencil"></i> 글쓰기
+                    </button>
+                </div>
             </div>
             <table class="board-table">
                 <tr>

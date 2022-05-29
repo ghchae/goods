@@ -26,11 +26,13 @@ input {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 30px;
 }
 
 #noticeBoard .search-form {
     height: 37px;
     display: flex;
+    margin: 0;
 }
 
 #noticeBoard .search-option {
