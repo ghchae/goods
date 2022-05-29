@@ -4,7 +4,6 @@
 <html lang="ko">
 <head>
     <title>회원가입</title>
-    <link rel="stylesheet" href="<c:url value='/resources/css/main.css'/>">
     <link rel="stylesheet" href="<c:url value='/resources/css/register.css'/>">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>

@@ -1,11 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ include file="/WEB-INF/views/top.jsp" %>
-
 <html>
 <head>
     <title>로그인</title>
-    <link rel="stylesheet" href="<c:url value='/resources/css/main.css'/>">
     <link rel="stylesheet" href="<c:url value='/resources/css/login.css'/>">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>

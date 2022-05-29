@@ -5,7 +5,6 @@
 <html>
 <head>
     <title>공지사항</title>
-    <link rel="stylesheet" href="<c:url value='/resources/css/main.css'/>">
     <link rel="stylesheet" href="<c:url value='/resources/css/board.css'/>">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
