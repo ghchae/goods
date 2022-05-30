@@ -1,5 +1,7 @@
 package com.portfolio.goods.domain;
 
+import javax.xml.transform.Result;
+
 public class ResultObject<T> {
     private boolean result = true;
     private String message;
@@ -16,6 +18,11 @@ public class ResultObject<T> {
     public ResultObject(boolean result, String message) {
         this.result = result;
         this.message = message;
+    }
+
+    public ResultObject(boolean result, T object) {
+        this.result = result;
+        this.object = object;
     }
 
     public ResultObject(boolean result, String message, T object) {

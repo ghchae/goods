@@ -2,6 +2,7 @@ package com.portfolio.goods.service;
 
 import com.portfolio.goods.dao.UserDao;
 import com.portfolio.goods.domain.ResultMessage;
+import com.portfolio.goods.domain.ResultObject;
 import com.portfolio.goods.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,14 +28,15 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public ResultMessage checkUserInfo(User user) {
+    public ResultObject checkUserInfo(User user) {
         User loginUser = userDao.selectOneUserById(user);
+
         if (loginUser == null) {
-            return new ResultMessage(false, "가입된 아이디가 없습니다.");
+            return new ResultObject(false, "가입된 아이디가 없습니다.");
         }
         if (!loginUser.getPassword().equals(user.getPassword())){
-            return new ResultMessage(false, "비밀번호가 틀렸습니다.");
+            return new ResultObject(false, "비밀번호가 틀렸습니다.");
         }
-            return new ResultMessage();
+            return new ResultObject(true, loginUser);
     }
 }

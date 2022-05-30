@@ -1,6 +1,7 @@
 package com.portfolio.goods.controller;
 
 import com.portfolio.goods.domain.ResultMessage;
+import com.portfolio.goods.domain.ResultObject;
 import com.portfolio.goods.domain.User;
 import com.portfolio.goods.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,11 +28,13 @@ public class LoginController {
     }
 
     @PostMapping("/login")
-    public @ResponseBody ResultMessage login(@RequestBody User user, HttpServletResponse response, HttpServletRequest request) {
-        ResultMessage resultMessage = userService.checkUserInfo(user);
-        if (resultMessage.isResult()) {
+    public @ResponseBody ResultObject login(@RequestBody User user, HttpServletResponse response, HttpServletRequest request) {
+        ResultObject resultObject = userService.checkUserInfo(user);
+        if (resultObject.isResult()) {
+            User loginUser = (User)resultObject.getObject();
             HttpSession session = request.getSession();
             session.setAttribute("userId", user.getUserId());
+            session.setAttribute("admin", loginUser.getAdmin());
 
             Cookie cookie = new Cookie("userId", user.getUserId());
             if (!user.isRememberId()) {
@@ -39,7 +42,7 @@ public class LoginController {
             }
             response.addCookie(cookie);
         }
-        return resultMessage;
+        return resultObject;
     }
 
     @GetMapping("/logout")

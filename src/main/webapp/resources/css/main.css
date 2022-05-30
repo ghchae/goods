@@ -16,7 +16,11 @@ body {
     background-color: #fafafa;
     font-size: 15px;
 }
-
+section {
+    position: relative;
+    height: 600px;
+    margin: 180px 0;
+}
 a {
     text-decoration: none;
     color: #222;

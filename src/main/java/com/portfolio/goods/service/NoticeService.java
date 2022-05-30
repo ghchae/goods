@@ -9,4 +9,8 @@ public interface NoticeService {
     List<Board> noticeList(SearchCondition cs);
 
     int noticeListCount();
+
+    Board noticeDetail(Integer bno);
+
+    int noticeRegist(Board notice);
 }

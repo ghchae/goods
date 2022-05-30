@@ -8,4 +8,10 @@ import java.util.List;
 public interface NoticeDao {
     List<Board> selectByCondition(SearchCondition cs);
     int count();
+
+    Board selectDetail(Integer bno);
+
+    int insert(Board notice);
+
+    int deleteAll();
 }

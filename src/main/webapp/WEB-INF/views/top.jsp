@@ -1,6 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<c:set var="loginId" value="${pageContext.request.session.getAttribute('userId')}"/>
 <link rel="stylesheet" href="<c:url value='/resources/css/main.css'/>">
 <header>
     <!-- lnb -->
@@ -12,7 +11,7 @@
             <div class="lnb-nav">
                 <c:choose>
                     <c:when test="${not empty loginId}">
-                        <a href="#none"><span id="loginIdtxt"><c:out value="${loginId}" /></span> 님 환영합니다.</a>
+                        <a href="#none"><span id="loginIdtxt"><c:out value="${userId}" /></span> 님 환영합니다.</a>
                         <a href="<c:url value='/login/logout'/>">로그아웃</a>
                     </c:when>
                     <c:otherwise>

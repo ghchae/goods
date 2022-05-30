@@ -3,6 +3,7 @@ package com.portfolio.goods.repository;
 import com.portfolio.goods.dao.NoticeDao;
 import com.portfolio.goods.domain.Board;
 import com.portfolio.goods.domain.SearchCondition;
+import com.portfolio.goods.domain.User;
 import com.portfolio.goods.service.NoticeService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -35,10 +36,33 @@ public class NoticeDaoImplTest {
         } else {
           assertTrue(list == null);
         }
-
     }
-
     @Test
     public void count() {
     }
+
+    @Test
+    public void insert() {
+        for (int i = 1; i < 22; i++) {
+            Board notice = new Board("testTitle" + i, "good content" + i, "tester");
+            noticeDao.insert(notice);
+        }
+    }
+
+    @Test
+    public void delete() {
+        noticeDao.deleteAll();
+        SearchCondition sc = new SearchCondition(1,10,"","");
+        System.out.println(sc);
+        List<Board> list = noticeDao.selectByCondition(sc);
+
+        if (list != null) {
+            for (Board board : list) {
+                System.out.println(board);
+            }
+        } else {
+            assertTrue(list == null);
+        }
+    }
+
 }

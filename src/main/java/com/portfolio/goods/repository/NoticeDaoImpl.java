@@ -26,4 +26,18 @@ public class NoticeDaoImpl implements NoticeDao {
         return sqlSession.selectOne(namespace + "count");
     }
 
+    @Override
+    public int insert(Board notice) {
+        return sqlSession.insert(namespace + "insert", notice);
+    }
+
+    @Override
+    public Board selectDetail(Integer bno) {
+        return sqlSession.selectOne(namespace + "selectDetail");
+    }
+
+    @Override
+    public int deleteAll() {
+        return sqlSession.delete(namespace + "deleteAll");
+    }
 }

@@ -28,6 +28,22 @@
 
     <select id="count" resultType="int">
         SELECT count(*)
-        FROM notice_board;
+        FROM notice_board
     </select>
+
+    <insert id="insert" parameterType="Board" useGeneratedKeys="true" keyProperty="bno">
+        INSERT INTO notice_board (title, content, writer)
+        VALUES (#{title}, #{content}, #{writer})
+    </insert>
+
+    <select id="selectDetail" parameterType="int" resultType="Board">
+        SELECT *
+        FROM notice_board
+        WHERE bno = #{bno}
+    </select>
+
+    <delete id="deleteAll">
+        DELETE
+        FROM notice_board
+    </delete>
 </mapper>
