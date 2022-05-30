@@ -10,7 +10,7 @@
             </div>
             <div class="lnb-nav">
                 <c:choose>
-                    <c:when test="${not empty loginId}">
+                    <c:when test="${not empty userId}">
                         <a href="#none"><span id="loginIdtxt"><c:out value="${userId}" /></span> 님 환영합니다.</a>
                         <a href="<c:url value='/login/logout'/>">로그아웃</a>
                     </c:when>
