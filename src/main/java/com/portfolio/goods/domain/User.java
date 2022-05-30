@@ -14,6 +14,7 @@ public class User {
     private String addressDetail;
     private Date reg_date;
     private Date up_date;
+    private String admin;
 
     private boolean rememberId;
 
@@ -117,6 +118,14 @@ public class User {
         this.up_date = up_date;
     }
 
+    public String getAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(String admin) {
+        this.admin = admin;
+    }
+
     public boolean isRememberId() {
         return rememberId;
     }
@@ -139,6 +148,7 @@ public class User {
                 ", addressDetail='" + addressDetail + '\'' +
                 ", reg_date=" + reg_date +
                 ", up_date=" + up_date +
+                ", admin='" + admin + '\'' +
                 ", rememberId=" + rememberId +
                 '}';
     }
