@@ -26,10 +26,11 @@ public class BoardController {
     }
 
     @GetMapping("/notice/write")
-    public String write(Integer page, Integer pageSize, Model model) {
+    public String write(Integer bno, Integer page, Integer pageSize, Model model) {
+        System.out.println("bno = " + bno);
         model.addAttribute("page", page);
         model.addAttribute("pageSize", pageSize);
-        model.addAttribute("mode", "new");
+        //Board noticeDetail = noticeService.noticeDetail(bno);
         return "notice/noticeUpdate";
     }
 
@@ -47,5 +48,16 @@ public class BoardController {
         model.addAttribute("page", page);
         model.addAttribute("pageSize", pageSize);
         return "notice/noticeDetail";
+    }
+
+    @GetMapping("/notice/modify")
+    public String modify(Board notice, Integer page, Integer pageSize, Model model) {
+
+        return "/notice/noticeUpdate?bno=";
+    }
+
+    @PostMapping("/notice/delete")
+    public String delete() {
+        return "/notice/noticeList";
     }
 }

@@ -16,11 +16,13 @@ body {
     background-color: #fafafa;
     font-size: 15px;
 }
+
 section {
     position: relative;
     height: 600px;
     margin: 180px 0;
 }
+
 a {
     text-decoration: none;
     color: #222;
@@ -475,6 +477,10 @@ footer {
     border: none;
 }
 /* #### section3, 게시판 #### */
+#section3 {
+    height: 300px;
+    margin: 0;
+}
 .board-inner {
     /* background-color: crimson; */
     width: 1280px;

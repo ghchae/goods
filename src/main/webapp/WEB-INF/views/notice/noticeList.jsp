@@ -30,7 +30,7 @@
                     <div>
                         <button id="writeBtn" class="btn-write"
                                 onclick="location.href='<c:url
-                                        value="/notice/write?page=${pageHandler.sc.page}&pageSize=${pageHandler.sc.pageSize}"/>'">
+                                        value="/notice/write?page=${pageHandler.sc.page}&pageSize=${pageHandler.sc.pageSize}&bno=${detail.bno}"/>'">
                             <i class="fa fa-pencil"></i> 글쓰기
                         </button>
                     </div>

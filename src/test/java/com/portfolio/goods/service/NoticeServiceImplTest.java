@@ -24,5 +24,9 @@ public class NoticeServiceImplTest {
 
     @Test
     public void noticeDetail() {
+
+        Board notice = noticeService.noticeDetail(0);
+        System.out.println(notice);
+
     }
 }

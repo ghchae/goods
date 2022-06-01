@@ -1,5 +1,4 @@
-
-#loginSection form {
+form {
     width: 400px;
     height: 450px;
     text-align: center;
@@ -13,7 +12,7 @@
     padding: 10px 0;
 }
 
-#loginSection input[type='text'], input[type='password'] {
+input[type='text'], input[type='password'] {
     width: 300px;
     height: 40px;
     border: 1px solid #fcb69f;
@@ -36,12 +35,12 @@
     padding: 13px 0;
 }
 
-#loginSection h3 {
+h3 {
     font-size: 50px;
     margin: 50px 0;
 }
 
-#loginSection #msg {
+#msg {
     height: 30px;
     text-align: center;
     font-size: 16px;

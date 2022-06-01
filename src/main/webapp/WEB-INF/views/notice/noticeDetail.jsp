@@ -9,11 +9,11 @@
 </head>
 <body>
 <section>
-    <div class="container">
+    <div id="noticeDetail">
         <h2 class="writing-header">공지사항</h2>
         <form id="form" class="frm">
-            <input type="hidden" name="bno" value="${board.bno}">
-            <input type="text" name="title" value="${board.title}"
+            <input type="hidden" name="bno" value="${notice.bno}">
+            <input type="text" name="title" value="${notice.title}"
                    placeholder=" 제목을 입력해주세요." ${mode eq "new" ? "" : 'readonly="readonly"'}>
             <textarea name="content" rows="20"
                       placeholder=" 내용을 입력해 주세요." ${mode eq "new" ? "" : 'readonly="readonly"'}>
@@ -23,7 +23,6 @@
             </c:if>
             <c:if test='${(board.writer eq loginId) && mode ne "new"}'>
                 <button type="button" id="modifyBtn" class="btn"><i class="fa fa-edit"></i> 수정</button>
-                <button type="button" id="removeBtn" class="btn"><i class="fa fa-trash"></i> 삭제</button>
             </c:if>
             <button type="button" id="listBtn" class="btn"><i class="fa fa-bars"></i> 목록</button>
         </form>
