@@ -10,7 +10,7 @@
 </head>
 <body>
 <section>
-    <div class="container">
+    <div id="noticeDetail">
         <h2 class="writing-header">공지사항</h2>
         <form id="noticeUpdateform">
             <input type="hidden" name="bno" value="${board.bno}">
