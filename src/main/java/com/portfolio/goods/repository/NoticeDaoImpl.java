@@ -33,7 +33,7 @@ public class NoticeDaoImpl implements NoticeDao {
 
     @Override
     public Board selectDetail(Integer bno) {
-        return sqlSession.selectOne(namespace + "selectDetail");
+        return sqlSession.selectOne(namespace + "selectDetail", bno);
     }
 
     @Override

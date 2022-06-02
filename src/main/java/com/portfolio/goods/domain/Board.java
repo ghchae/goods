@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.Objects;
 
 public class Board {
-    private int bno;
+    private Integer bno;
     private String title;
     private String content;
     private String writer;
@@ -31,11 +31,11 @@ public class Board {
         this.writer = writer;
     }
 
-    public int getBno() {
+    public Integer getBno() {
         return bno;
     }
 
-    public void setBno(int bno) {
+    public void setBno(Integer bno) {
         this.bno = bno;
     }
 

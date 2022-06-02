@@ -5,23 +5,20 @@
 <html>
 <head>
     <link rel="stylesheet" href="<c:url value='/resources/css/board.css'/>">
+    <link rel="stylesheet" href="<c:url value='/resources/css/boardDetail.css'/>">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 <body>
 <section>
     <div id="noticeDetail">
         <h2 class="writing-header">공지사항</h2>
-        <form id="form" class="frm">
+        <form>
             <input type="hidden" name="bno" value="${notice.bno}">
             <input type="text" name="title" value="${notice.title}"
-                   placeholder=" 제목을 입력해주세요." ${mode eq "new" ? "" : 'readonly="readonly"'}>
-            <textarea name="content" rows="20"
-                      placeholder=" 내용을 입력해 주세요." ${mode eq "new" ? "" : 'readonly="readonly"'}>
-                <c:out value="${board.content}"/></textarea>
-            <c:if test='${mode eq "new"}'>
-                <button type="button" id="writeBtn" class="btn"><i class="fa fa-pencil"></i> 등록</button>
-            </c:if>
-            <c:if test='${(board.writer eq loginId) && mode ne "new"}'>
+                   placeholder=" 제목을 입력해주세요." readonly>
+            <textarea name="content" rows="20" placeholder=" 내용을 입력해 주세요." readonly>
+                <c:out value="${notice.content}"/></textarea>
+            <c:if test='${notice.writer eq loginId}'>
                 <button type="button" id="modifyBtn" class="btn"><i class="fa fa-edit"></i> 수정</button>
             </c:if>
             <button type="button" id="listBtn" class="btn"><i class="fa fa-bars"></i> 목록</button>
@@ -30,4 +27,11 @@
 </section>
 </body>
 </html>
-</jsp:root>
+<%@ include file="/WEB-INF/views/footer.jsp" %>
+<script>
+    $(document).ready(function () {
+        $("#listBtn").click(function () {
+            location.href="<c:url value='/notice/list'/>?page=${page}&pageSize=${pageSize}";
+        });
+    });
+</script>
