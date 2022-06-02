@@ -40,4 +40,9 @@ public class NoticeDaoImpl implements NoticeDao {
     public int deleteAll() {
         return sqlSession.delete(namespace + "deleteAll");
     }
+
+    @Override
+    public int update(Board notice) {
+        return sqlSession.update(namespace + "update", notice);
+    }
 }

@@ -14,4 +14,6 @@ public interface NoticeDao {
     int insert(Board notice);
 
     int deleteAll();
+
+    int update(Board notice);
 }

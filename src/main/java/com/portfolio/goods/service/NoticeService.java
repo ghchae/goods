@@ -1,6 +1,7 @@
 package com.portfolio.goods.service;
 
 import com.portfolio.goods.domain.Board;
+import com.portfolio.goods.domain.ResultMessage;
 import com.portfolio.goods.domain.SearchCondition;
 
 import java.util.List;
@@ -13,4 +14,6 @@ public interface NoticeService {
     Board noticeDetail(Integer bno);
 
     int noticeRegist(Board notice);
+
+    ResultMessage noticeModify(Board notice);
 }

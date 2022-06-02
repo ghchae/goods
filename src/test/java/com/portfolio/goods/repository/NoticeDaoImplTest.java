@@ -65,4 +65,14 @@ public class NoticeDaoImplTest {
         }
     }
 
+    @Test
+    public void update() {
+        Board notice = noticeDao.selectDetail(54);
+        System.out.println(notice);
+        notice.setContent("test 중입니다.");
+        notice.setTitle("수정 테스트");
+        assertEquals(noticeDao.update(notice), 1);
+        System.out.println(noticeDao.selectDetail(54));
+    }
+
 }

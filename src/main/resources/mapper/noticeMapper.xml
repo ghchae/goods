@@ -46,4 +46,12 @@
         DELETE
         FROM notice_board
     </delete>
+
+    <update id="update" parameterType="Board">
+        UPDATE notice_board
+        SET title   = #{title}
+          , content = #{content}
+          , up_date = now()
+        WHERE bno = #{bno};
+    </update>
 </mapper>

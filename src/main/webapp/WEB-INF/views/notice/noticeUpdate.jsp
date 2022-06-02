@@ -24,7 +24,7 @@
                         <button type="button" id="writeBtn" class="btn"><i class="fa fa-pencil"></i> 등록</button>
                     </c:when>
                     <c:otherwise>
-                        <button type="button" id="modifyBtn" class="btn"><i class="fa fa-edit"></i> 수정 하기</button>
+                        <button type="button" id="modifyBtn" class="btn"><i class="fa fa-edit"></i> 수정</button>
                         <button type="button" id="removeBtn" class="btn"><i class="fa fa-trash"></i> 삭제</button>
                     </c:otherwise>
                 </c:choose>
@@ -36,6 +36,7 @@
 </body>
 </html>
 <%@ include file="/WEB-INF/views/footer.jsp" %>
+<script src=" <c:url value='/resources/js/common.js'/>"></script>
 <script>
     let noticeProceed = true;
     $(document).ready(function () {
@@ -50,9 +51,38 @@
             form.submit();
         });
         $("#modifyBtn").click(function () {
-            if (!alert("수정 하시겠습니까?")) {
+            noticeProceed = false;
+            if (!confirm("수정 하시겠습니까?")) {
+                noticeProceed = true;
                 return;
             }
+            $.ajax({
+                type: 'POST',
+                url: '/goods/notice/modify',
+                headers: {"content-type": "application/json"},
+                dataType: 'text',
+                data: JSON.stringify(toJson("#noticeUpdateform")),
+                success: function (data) {
+                    let result = JSON.parse(data);
+                    if (result.result) {
+                        /*success*/
+                        alert("수정되었습니다.");
+                        window.location.href = "<c:url value='/notice/list'/>";
+                        return;
+                    }
+                    alert("수정에 실패했습니다.");
+                    noticeProceed = true;
+                    return;
+                },
+
+            });
+
+        });
+        $("#removeBtn").click(function () {
+            if (!confirm("삭제 하시겠습니까?")) {
+                return;
+            }
+
         });
     });
 </script>

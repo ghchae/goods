@@ -67,7 +67,7 @@ public class BoardController {
 
     @PostMapping("/notice/modify")
     public @ResponseBody ResultMessage modify(@RequestBody Board notice) {
-        return new ResultMessage();
+        return noticeService.noticeModify(notice);
     }
 
     @PostMapping("/notice/delete")
