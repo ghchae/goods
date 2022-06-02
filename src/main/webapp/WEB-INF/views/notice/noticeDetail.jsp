@@ -18,8 +18,8 @@
                    placeholder=" 제목을 입력해주세요." readonly>
             <textarea name="content" rows="20" placeholder=" 내용을 입력해 주세요." readonly>
                 <c:out value="${notice.content}"/></textarea>
-            <c:if test='${notice.writer eq loginId}'>
-                <button type="button" id="modifyBtn" class="btn"><i class="fa fa-edit"></i> 수정</button>
+            <c:if test='${notice.writer eq userId}'>
+                <a href="<c:url value='/notice/modify'/>?bno=${notice.bno}&page=${page}&pageSize=${pageSize}" class="btn"><i class="fa fa-edit"></i> 수정</a>
             </c:if>
             <button type="button" id="listBtn" class="btn"><i class="fa fa-bars"></i> 목록</button>
         </form>

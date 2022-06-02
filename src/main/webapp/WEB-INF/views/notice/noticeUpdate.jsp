@@ -24,7 +24,7 @@
                         <button type="button" id="writeBtn" class="btn"><i class="fa fa-pencil"></i> 등록</button>
                     </c:when>
                     <c:otherwise>
-                        <button type="button" id="modifyBtn" class="btn"><i class="fa fa-edit"></i> 수정</button>
+                        <button type="button" id="modifyBtn" class="btn"><i class="fa fa-edit"></i> 수정 하기</button>
                         <button type="button" id="removeBtn" class="btn"><i class="fa fa-trash"></i> 삭제</button>
                     </c:otherwise>
                 </c:choose>
@@ -37,6 +37,7 @@
 </html>
 <%@ include file="/WEB-INF/views/footer.jsp" %>
 <script>
+    let noticeProceed = true;
     $(document).ready(function () {
         $("#listBtn").click(function () {
             location.href = "<c:url value='/notice/list'/>?page=${page}&pageSize=${pageSize}";
@@ -47,6 +48,11 @@
             form.attr("action", "<c:url value='/notice/write'/>")
             form.attr("method", "post");
             form.submit();
+        });
+        $("#modifyBtn").click(function () {
+            if (!alert("수정 하시겠습니까?")) {
+                return;
+            }
         });
     });
 </script>
