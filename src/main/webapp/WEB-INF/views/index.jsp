@@ -12,84 +12,84 @@
 <section id="item-section">
     <!-- goods list -->
     <div class="items-inner">
-        <h2>Goods</h2>
+        <h2>Study</h2>
         <div class="items">
             <div class="item">
                 <div class="photo">
-                    <a href="#none">
-                        <img src="<c:url value='/resources/images/item-01.jpg'/>">
-                    </a>
-                    <a href="#none">
-                        <img src="<c:url value='/resources/images/item-01-hover.jpg'/>">
-                    </a>
+<%--                    <a href="#none">--%>
+<%--                        <img src="<c:url value='/resources/images/item-01.jpg'/>">--%>
+<%--                    </a>--%>
+<%--                    <a href="#none">--%>
+<%--                        <img src="<c:url value='/resources/images/item-01-hover.jpg'/>">--%>
+<%--                    </a>--%>
                 </div>
                 <div class="detail">
-                    <span class="price"><b>10<small>%</small></b>-</span>
-                    <span class="name">상품1</span>
+                    <%--<span class="price"><b>10<small>%</small></b>-</span>--%>
+                    <span class="name">Java</span>
                     <span class="count"><b>조회</b>0</span>
                     <span class="like"></span>
                 </div>
             </div>
             <div class="item">
                 <div class="photo">
-                    <a href="#none">
-                        <img src="<c:url value='/resources/images/item-02.jpg'/>">
-                    </a>
-                    <a href="#none">
-                        <img src="<c:url value='/resources/images/item-02-hover.jpg'/>">
-                    </a>
+<%--                    <a href="#none">--%>
+<%--                        <img src="<c:url value='/resources/images/item-02.jpg'/>">--%>
+<%--                    </a>--%>
+<%--                    <a href="#none">--%>
+<%--                        <img src="<c:url value='/resources/images/item-02-hover.jpg'/>">--%>
+<%--                    </a>--%>
                 </div>
                 <div class="detail">
-                    <span class="price"><b>10<small>%</small></b>-</span>
-                    <span class="name">상품2</span>
+                    <%--<span class="price"><b>10<small>%</small></b>-</span>--%>
+                    <span class="name">Spring</span>
                     <span class="count"><b>조회</b>0</span>
                     <span class="like"></span>
                 </div>
             </div>
             <div class="item">
                 <div class="photo">
-                    <a href="#none">
-                        <img src="<c:url value='/resources/images/item-03.jpg'/>">
-                    </a>
-                    <a href="#none">
-                        <img src="<c:url value='/resources/images/item-03-hover.jpg'/>">
-                    </a>
+<%--                    <a href="#none">--%>
+<%--                        <img src="<c:url value='/resources/images/item-03.jpg'/>">--%>
+<%--                    </a>--%>
+<%--                    <a href="#none">--%>
+<%--                        <img src="<c:url value='/resources/images/item-03-hover.jpg'/>">--%>
+<%--                    </a>--%>
                 </div>
                 <div class="detail">
-                    <span class="price"><b>10<small>%</small></b>-</span>
-                    <span class="name">상품3</span>
+                    <%--<span class="price"><b>10<small>%</small></b>-</span>--%>
+                    <span class="name">JavaScript</span>
                     <span class="count"><b>조회</b>0</span>
                     <span class="like"></span>
                 </div>
             </div>
             <div class="item">
                 <div class="photo">
-                    <a href="#none">
-                        <img src="<c:url value='/resources/images/item-04.jpg'/>">
-                    </a>
-                    <a href="#none">
-                        <img src="<c:url value='/resources/images/item-04-hover.jpg'/>">
-                    </a>
+<%--                    <a href="#none">--%>
+<%--                        <img src="<c:url value='/resources/images/item-04.jpg'/>">--%>
+<%--                    </a>--%>
+<%--                    <a href="#none">--%>
+<%--                        <img src="<c:url value='/resources/images/item-04-hover.jpg'/>">--%>
+<%--                    </a>--%>
                 </div>
                 <div class="detail">
-                    <span class="price"><b>10<small>%</small></b>-</span>
-                    <span class="name">상품4</span>
+                    <%--<span class="price"><b>10<small>%</small></b>-</span>--%>
+                    <span class="name">DataBase</span>
                     <span class="count"><b>조회</b>0</span>
                     <span class="like"></span>
                 </div>
             </div>
             <div class="item">
                 <div class="photo">
-                    <a href="#none">
-                        <img src="<c:url value='/resources/images/item-05.jpg'/>">
-                    </a>
-                    <a href="#none">
-                        <img src="<c:url value='/resources/images/item-05-hover.jpg'/>">
-                    </a>
+<%--                    <a href="#none">--%>
+<%--                        <img src="<c:url value='/resources/images/item-05.jpg'/>">--%>
+<%--                    </a>--%>
+<%--                    <a href="#none">--%>
+<%--                        <img src="<c:url value='/resources/images/item-05-hover.jpg'/>">--%>
+<%--                    </a>--%>
                 </div>
                 <div class="detail">
-                    <span class="price"><b>0<small>%</small></b>-</span>
-                    <span class="name">상품5</span>
+                    <%--<span class="price"><b>0<small>%</small></b>-</span>--%>
+                    <span class="name">Web</span>
                     <span class="count"><b>조회</b>0</span>
                     <span class="like"></span>
                 </div>
@@ -105,7 +105,7 @@
         <div class="goods">
             <div class="good">
                 <div class="good-list">
-                    <h4>상품1<br>준비중 입니다.</h4>
+                    <h4>컨텐츠<br>준비중 입니다.</h4>
                     <div>
                         <a href="#none" class="btn">더보기</a>
                     </div>
@@ -124,7 +124,7 @@
             </div>
             <div class="good">
                 <div class="good-list">
-                    <h4>상품2<br>준비중 입니다.</h4>
+                    <h4>컨텐츠<br>준비중 입니다.</h4>
                     <div>
                         <a href="#none" class="btn">더보기</a>
                     </div>
@@ -143,7 +143,7 @@
             </div>
             <div class="good">
                 <div class="good-list">
-                    <h4>상품3<br>준비중 입니다.</h4>
+                    <h4>컨텐츠<br>준비중 입니다.</h4>
                     <div>
                         <a href="#none" class="btn">더보기</a>
                     </div>

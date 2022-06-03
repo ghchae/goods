@@ -6,7 +6,7 @@
     <div class="lnb-outer">
         <div class="lnb">
             <div class="logo">
-                <a href="<c:url value='/'/>">goods <span>shop</span></a>
+                <a href="<c:url value='/'/>">study<span>portFolio</span></a>
             </div>
             <div class="lnb-nav">
                 <c:choose>
@@ -27,25 +27,27 @@
         <nav>
             <ul class="gnb">
                 <li>
-                    <a href="#none">introduce</a>
+                    <a href="#none">소개</a>
                     <div class="dropdown">
                     </div>
                 </li>
                 <li>
-                    <a href="#none">product</a>
+                    <a href="#none">공부</a>
                     <div class="dropdown">
-                        <a href="#none">item1</a>
-                        <a href="#none">item2</a>
-                        <a href="#none">item3</a>
+                        <a href="#none">Java</a>
+                        <a href="#none">Spring</a>
+                        <a href="#none">JavaScript</a>
+                        <a href="#none">DataBase</a>
+                        <a href="#none">마이바티스</a>
+                        <a href="#none">Web</a>
                     </div>
                 </li>
                 <li>
-                    <a href="#none">contents</a>
+                    <a href="#none">프로젝트</a>
                     <div class="dropdown">
-                        <a href="#none">media</a>
-                        <a href="#none">news</a>
-                        <a href="#none">video</a>
-                        <a href="#none">magazine</a>
+                        <a href="#none">쇼핑몰</a>
+                        <a href="#none">길찾기</a>
+                        <a href="#none">홈페이지</a>
                     </div>
                 </li>
                 <li>
@@ -65,19 +67,17 @@
             <div class="site-map">
                 <div class="site">
                     <div>
-                        <b>소개글</b>
-                        <a href="#none">소개</a>
-                        <a href="#none">찾아오시는길</a>
+                        <b>0</b>
+                        <a href="#none">0-1</a>
+                        <a href="#none">0-2</a>
                     </div>
                     <div>
-                        <b>상품</b>
-                        <a href="#none">상품1</a>
-                        <a href="#none">상품2</a>
-                        <a href="#none">상품3</a>
+                        <b>1</b>
+                        <a href="#none">1-1</a>
                     </div>
                     <div>
-                        <b>컨텐츠</b>
-                        <a href="#none">준비중 입니다</a>
+                        <b>2</b>
+                        <a href="#none">2-1</a>
                     </div>
                     <div></div>
                     <div></div>

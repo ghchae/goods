@@ -19,8 +19,7 @@ body {
 
 section {
     position: relative;
-    height: 600px;
-    margin: 180px 0;
+    height: 500px;
 }
 
 a {
@@ -51,6 +50,7 @@ h1,h2,h3,h4,h5,h6 {
 .logo span {
     display: block;
     text-align: right;
+    margin-left: 15px;
 }
 .lnb-nav a:hover {
     color: dodgerblue;
@@ -196,7 +196,7 @@ h1,h2,h3,h4,h5,h6 {
 /* #### section1 #### */
 /* 아이템 카드 를 만들어보자*/
 #item-section {
-    margin-top: 150px;
+    margin-top: 200px;
 }
 .items-inner {
     width: 1450px;
@@ -241,7 +241,8 @@ h1,h2,h3,h4,h5,h6 {
 /* 아이템 사진정렬 */
 .item .photo {
     position: relative;
-    height: 390px;
+    /*height: 390px;*/
+    height: 200px;
     cursor: pointer;
 }
 .item .photo a img {
