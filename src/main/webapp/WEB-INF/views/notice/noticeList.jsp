@@ -9,8 +9,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 <body>
-<section class="boardSection" id="noticeBoard">
-    <div style="text-align:center">
+<section>
+    <div id="noticeBoard">
         <div class="board-container">
             <div class="search-container">
                 <form action="<c:url value="/notice/list"/>" class="search-form" method="get">

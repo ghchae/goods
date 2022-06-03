@@ -1,4 +1,7 @@
-
+#noticeBoard {
+    margin-top: 100px;
+    text-align: center;
+}
 #noticeBoard button,
 input {
     border: none;
