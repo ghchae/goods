@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ include file="/WEB-INF/views/top.jsp" %>
 <html>
 <head>
@@ -170,18 +171,21 @@
                 <a href="#event">더보기</a>
             </div>
             <table>
-                <tr>
-                    <td>[공지] 테스트입니다.</td>
-                    <td>2022.05.12</td>
-                </tr>
-                <tr>
-                    <td>[공지] 테스트입니다.</td>
-                    <td>2022.05.12</td>
-                </tr>
-                <tr>
-                    <td>[공지] 테스트입니다.</td>
-                    <td>2022.05.12</td>
-                </tr>
+                <c:forEach items="${noticeList}" var="notice">
+                   <tr>
+                       <td>
+                           <a href="<c:url value='/notice/read?bno=${notice.bno}'/>"><c:out value="${notice.title}"/></a>
+                       </td>
+                       <td>
+                           <fmt:formatDate value="${notice.reg_date}" pattern="yy-MM-dd"/>
+                       </td>
+                   </tr>
+                </c:forEach>
+                <c:if test="${empty noticeList}">
+                    <td>
+                        공지가 없습니다.
+                    </td>
+                </c:if>
             </table>
         </div>
         <div class="event">
