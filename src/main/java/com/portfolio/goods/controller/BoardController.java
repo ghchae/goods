@@ -48,10 +48,10 @@ public class BoardController {
     }
 
     @GetMapping("/notice/read")
-    public String read(Integer bno, Integer page, Integer pageSize, Model model) {
+    public String read(Integer bno, SearchCondition sc, Model model) {
         Board noticeDetail = noticeService.noticeDetail(bno);
-        model.addAttribute("page", page);
-        model.addAttribute("pageSize", pageSize);
+        model.addAttribute("page", sc.getPage());
+        model.addAttribute("pageSize", sc.getPageSize());
         model.addAttribute("notice", noticeDetail);
         return "notice/noticeDetail";
     }
