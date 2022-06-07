@@ -14,10 +14,8 @@
         <h2 class="writing-header">공지사항</h2>
         <form>
             <input type="hidden" name="bno" value="${notice.bno}">
-            <input type="text" name="title" value="${notice.title}"
-                   placeholder=" 제목을 입력해주세요." readonly>
-            <textarea name="content" rows="20" placeholder=" 내용을 입력해 주세요." readonly>
-                <c:out value="${notice.content}"/></textarea>
+            <input type="text" name="title" value="${notice.title}" readonly>
+            <textarea name="content" rows="20" readonly><c:out value="${notice.content}"/></textarea>
             <c:if test='${notice.writer eq userId}'>
                 <a href="<c:url value='/notice/modify'/>?bno=${notice.bno}&page=${page}&pageSize=${pageSize}" class="btn"><i class="fa fa-edit"></i> 수정</a>
             </c:if>
