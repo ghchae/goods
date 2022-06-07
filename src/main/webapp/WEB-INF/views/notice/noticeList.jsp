@@ -42,7 +42,7 @@
                     <th class="title">제목</th>
                     <th class="writer">이름</th>
                     <th class="regdate">등록일</th>
-                    <th class="viewcnt">조회수</th>
+<%--                    <th class="viewcnt">조회수</th>--%>
                 </tr>
                 <c:forEach var="notice" items="${list}">
                     <tr>
@@ -52,8 +52,8 @@
                                     value="${notice.title}"/></a>
                         </td>
                         <td class="writer"><c:out value="${notice.writer}"/></td>
-                        <td class="regdate"><fmt:formatDate value="${notice.reg_date}" pattern="yy-MM-dd HH:mm"/></td>
-                        <td class="viewcnt"><c:out value="${notice.view_cnt}"/></td>
+                        <td class="regdate"><fmt:formatDate value="${notice.reg_date}" pattern="yy-MM-dd"/></td>
+<%--                        <td class="viewcnt"><c:out value="${notice.view_cnt}"/></td>--%>
                     </tr>
                 </c:forEach>
             </table>

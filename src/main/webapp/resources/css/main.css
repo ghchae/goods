@@ -186,7 +186,9 @@ h1,h2,h3,h4,h5,h6 {
 .dropdown a {
     display: block;
     padding-left: 10px;
-    background-color: #ffecd2;
+    background-color: #fff;
+    /*border-bottom: 1px solid #ffecd2;*/
+    border-bottom: 1px solid #eee;
 }
 .gnb li:hover .dropdown {
     opacity: 1;
