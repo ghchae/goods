@@ -16,4 +16,6 @@ public interface NoticeService {
     int noticeRegist(Board notice);
 
     ResultMessage noticeModify(Board notice);
+
+    ResultMessage noticeRemove(Integer bno);
 }

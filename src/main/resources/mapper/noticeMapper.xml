@@ -54,4 +54,10 @@
           , up_date = now()
         WHERE bno = #{bno};
     </update>
+
+    <delete id="delete" parameterType="Integer">
+        DELETE
+        FROM notice_board
+        WHERE bno = #{bno};
+    </delete>
 </mapper>

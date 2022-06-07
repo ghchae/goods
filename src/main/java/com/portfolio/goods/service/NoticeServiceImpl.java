@@ -40,4 +40,10 @@ public class NoticeServiceImpl implements NoticeService {
         noticeDao.update(notice);
         return new ResultMessage();
     }
+
+    @Override
+    public ResultMessage noticeRemove(Integer bno) {
+        noticeDao.delete(bno);
+        return new ResultMessage();
+    }
 }

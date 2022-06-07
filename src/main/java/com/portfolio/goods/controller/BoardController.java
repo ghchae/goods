@@ -22,7 +22,6 @@ public class BoardController {
 
     @GetMapping("/notice/list")
     public String list(SearchCondition searchCondition, Model model) {
-        System.out.println("sc :" + searchCondition);
         int totalCnt = noticeService.noticeListCount();
         model.addAttribute("pageHandler", new PageHandler(totalCnt, searchCondition));
         model.addAttribute("list", noticeService.noticeList(searchCondition));
@@ -31,7 +30,6 @@ public class BoardController {
 
     @GetMapping("/notice/write")
     public String write(Integer bno, Integer page, Integer pageSize, Model model) {
-        System.out.println("write bno = " + bno);
         Board noticeDetail = noticeService.noticeDetail(bno);
         model.addAttribute("page", page);
         model.addAttribute("pageSize", pageSize);
@@ -42,7 +40,7 @@ public class BoardController {
     @PostMapping("/notice/write")
     public String write(Board notice, HttpSession session) {
 //        System.out.println(session.getId());/* Jsession ID*/
-        notice.setWriter((String)session.getAttribute("userId"));
+        notice.setWriter((String) session.getAttribute("userId"));
         int bno = noticeService.noticeRegist(notice);
         return "redirect:/notice/list";
     }
@@ -70,9 +68,8 @@ public class BoardController {
         return noticeService.noticeModify(notice);
     }
 
-    @PostMapping("/notice/delete")
-    public String delete() {
-
-        return "/notice/noticeList";
+    @PostMapping("/notice/remove")
+    public @ResponseBody ResultMessage remove(@RequestBody Board notice) {
+        return noticeService.noticeRemove(notice.getBno());
     }
 }

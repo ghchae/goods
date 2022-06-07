@@ -75,4 +75,10 @@ public class NoticeDaoImplTest {
         System.out.println(noticeDao.selectDetail(54));
     }
 
+    @Test
+    public void deleteOne() {
+        Board notice = noticeDao.selectDetail(58);
+        System.out.println(notice);
+        assertEquals(noticeDao.delete(notice.getBno()), 1);
+    }
 }

@@ -74,15 +74,36 @@
                     noticeProceed = true;
                     return;
                 },
-
             });
-
         });
         $("#removeBtn").click(function () {
             if (!confirm("삭제 하시겠습니까?")) {
+                noticeProceed = true;
                 return;
             }
-
+            $.ajax({
+                type: 'POST',
+                url: '/goods/notice/remove',
+                headers: {"content-type": "application/json"},
+                dataType: 'text',
+                data: JSON.stringify(
+                    {
+                        bno: ${notice.bno}
+                    }
+                ),
+                success: function (data) {
+                    let result = JSON.parse(data);
+                    if (result.result) {
+                        /*success*/
+                        alert("삭제되었습니다.");
+                        window.location.href = "<c:url value='/notice/list'/>";
+                        return;
+                    }
+                    alert("삭제에 실패했습니다.");
+                    noticeProceed = true;
+                    return;
+                },
+            });
         });
     });
 </script>
