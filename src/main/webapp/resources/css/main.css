@@ -19,6 +19,7 @@ body {
 
 section {
     position: relative;
+    height: 100%;
 }
 
 a {
@@ -196,6 +197,8 @@ h1,h2,h3,h4,h5,h6 {
 /* 아이템 카드 를 만들어보자*/
 #item-section {
     margin-top: 200px;
+    margin-bottom: 150px;
+    height: initial;
 }
 .items-inner {
     width: 1450px;

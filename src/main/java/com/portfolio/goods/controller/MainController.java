@@ -19,4 +19,9 @@ public class MainController {
         model.addAttribute("noticeList", noticeService.noticeList(sc));
         return "index";
     }
+
+    @GetMapping("/introduce")
+    public String introduce() {
+        return "introduce";
+    }
 }

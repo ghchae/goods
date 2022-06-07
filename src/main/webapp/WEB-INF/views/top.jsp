@@ -27,7 +27,7 @@
         <nav>
             <ul class="gnb">
                 <li>
-                    <a href="#none">소개</a>
+                    <a href="<c:url value='/introduce'/>">소개</a>
                     <div class="dropdown">
                     </div>
                 </li>

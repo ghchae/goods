@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css');
+
+/*body {*/
+/*    font-family: 'Noto Sans KR', sans-serif;*/
+/*    margin: 0;*/
+/*    line-height: 1.5em;*/
+/*    font-size: 15px;*/
+/*    font-weight: 300;*/
+/*    color: #222;*/
+/*    background-color: #fafafa;*/
+/*    height: 100vh;*/
+/*}*/
+/*a {*/
+/*    text-decoration: none;*/
+/*    color: #222;*/
+/*}*/
+/*.frame {}*/
+/*  */
+section {
+    position: relative;
+    height: 500px;
+    margin-top: 100px;
+}
+.profile {
+    position: relative;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    border-radius: 7px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    width: 320px;
+    /* height: 500px; */
+    padding: 50px 30px;
+    box-sizing: border-box;/* 패딩을 줬을때 박스가 커지지않게 해줌 */
+    text-align: center;
+    background-color: #fff;
+}
+.face {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: auto;/* width, height가지고 block요소일때만 사용가능. inline-block일 경우에는 부모요소가 ta:center이기 때문임 */
+}
+.face img {
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+.face i {
+    background-color: deepskyblue;
+    font-size: 20px;
+    color: white;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 10px;
+    right: 2px;
+}
+
+.profile h1 {
+    font-size: 26px;
+    font-weight: normal;
+    line-height: 1.2em;
+    margin-bottom: 0;
+    margin-top: 20px;
+}
+.profile h1 span {
+    display: block;
+    font-size: 12px;
+    color: #bbb;
+    text-transform: uppercase;
+}
+.profile p {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+.profile p span {
+    display: block;
+    color: royalblue;
+}
+.view-portfolio {
+    display: inline-block;
+    background-color: dodgerblue;
+    color: #fff;
+    padding: 5px;
+    border-radius: 30px;
+    text-transform: capitalize;/* 첫글자만 대문자 */
+    margin-bottom: 20px;
+    width: 180px;
+    /* a태그는 inline요소다 inline요소는 크기값못가지고, 마진값 못가짐 -> inline-block으로 변경 (중요) */
+}
+
+/* sns , 손이 만이가는 작업*/
+.sns {
+    border-top: 1px solid #eee;
+}
+.sns div {
+    display: inline-block;
+    width: 30%;
+    margin-top: 20px;
+}
+.sns div i {
+    background-color: red;
+    color: white;
+    width: 50px;
+    height: 50px;
+    font-size: 2em;
+    line-height: 50px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+.sns div:nth-child(1) i {
+    background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
+}
+.sns div:nth-child(2) i {
+    background-image: linear-gradient(to top, #00c6fb 0%, #005bea 100%);
+}
+.sns div:nth-child(3) i {
+    background-image: linear-gradient(to top, #e8198b 0%, #c7eafd 100%);
+}
+.sns div span {
+    font-size: 13px;
+    color: #bbb;
+}
+.sns div span big {
+    display: block;
+    color: #333;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/* Top Buttons */
+.btn-mode {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+}
+.btn-mode::before {
+    /* content:"\f186"; */
+    /* font-family: fontawesome; */
+    content: "\eb0f";
+    font-family: xeicon;
+}
+.like-more {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+.btn-like{
+    display: inline-block;
+}
+.btn-like::before {
+    /* content:"\f08a";
+    font-family: fontawesome; */
+    content: "\ea11";
+    font-family: xeicon;
+}
+.btn-more{}
