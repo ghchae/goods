@@ -54,9 +54,6 @@
                     <a href="<c:url value='/notice/list'/>">공지사항</a>
                 </li>
                 <li>
-                    <a href="#none">자유게시판</a>
-                </li>
-                <li>
                     <div class="trigger">
                         <span></span>
                         <span></span>

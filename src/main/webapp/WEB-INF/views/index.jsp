@@ -168,7 +168,7 @@
         <div class="notice">
             <div class="title">
                 <h2>공지사항</h2>
-                <a href="#event">더보기</a>
+                <a href="<c:url value='/notice/list'/>">더보기</a>
             </div>
             <table>
                 <c:forEach items="${noticeList}" var="notice">
