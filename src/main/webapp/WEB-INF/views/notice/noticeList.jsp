@@ -37,13 +37,18 @@
                 </c:if>
             </div>
             <table class="board-table">
-                <tr>
-                    <th class="no">번호</th>
-                    <th class="title">제목</th>
-                    <th class="writer">이름</th>
-                    <th class="regdate">등록일</th>
-<%--                    <th class="viewcnt">조회수</th>--%>
-                </tr>
+                <colgroup>
+                    <col style="width: 15%"/>
+                    <col />
+                    <col style="width: 10%"/>
+                </colgroup>
+<%--                <tr>--%>
+<%--                    <th class="no">번호</th>--%>
+<%--                    <th class="title">제목</th>--%>
+<%--&lt;%&ndash;                    <th class="writer">이름</th>&ndash;%&gt;--%>
+<%--                    <th class="regdate">등록일</th>--%>
+<%--&lt;%&ndash;                    <th class="viewcnt">조회수</th>&ndash;%&gt;--%>
+<%--                </tr>--%>
                 <c:forEach var="notice" items="${list}">
                     <tr>
                         <td class="no"><c:out value="${notice.bno}"/></td>
@@ -51,7 +56,7 @@
                             <a href="<c:url value='/notice/read?bno=${notice.bno}&page=${pageHandler.sc.page}&pageSize=${pageHandler.sc.pageSize}'/>"><c:out
                                     value="${notice.title}"/></a>
                         </td>
-                        <td class="writer"><c:out value="${notice.writer}"/></td>
+<%--                        <td class="writer"><c:out value="${notice.writer}"/></td>--%>
                         <td class="regdate"><fmt:formatDate value="${notice.reg_date}" pattern="yy-MM-dd"/></td>
 <%--                        <td class="viewcnt"><c:out value="${notice.view_cnt}"/></td>--%>
                     </tr>

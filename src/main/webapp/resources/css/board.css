@@ -73,12 +73,29 @@ input {
     cursor: pointer;
 }
 
+.board-table {
+    font-weight: 300;
+    margin-top: 80px;
+    border-top: 1px solid;
+}
 .board-table th,
 td {
     width: 300px;
     text-align: center;
     /*padding: 10px 12px;*/
     border-bottom: 1px solid #ddd;
+}
+
+.board-table colgroup col:first-child {
+    width: 15%;
+}
+.board-table colgroup col:last-child {
+    width: 10%;
+}
+
+.board-table td:nth-child(2) {
+    text-align: left;
+    padding-left: 20px;
 }
 
 #noticeBoard .paging {
@@ -126,11 +143,14 @@ td {
 .board-table {
     background-color: #fff;
     border-collapse: collapse; /* spacing 이 없는 테이블을 만들 수 있다.*/
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+    /*box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);*/
 }
 
 .board-table tr {
     border-bottom: 1px solid #eee;
+}
+.board-table td {
+    padding: 17px 0;
 }
 
 .board-table tr:last-child {
@@ -148,7 +168,7 @@ td {
 }
 
 .board-table tr:nth-child(odd) {
-    background-color: #eee;
+    /*background-color: #eee;*/
     /*#f0f0f070*/
 }
 
