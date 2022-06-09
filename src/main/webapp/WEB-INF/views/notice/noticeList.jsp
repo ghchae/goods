@@ -13,6 +13,7 @@
     <div id="noticeBoard">
         <div class="board-container">
             <div class="search-container">
+                <div class="main-title">공지사항</div>
                 <form action="<c:url value="/notice/list"/>" class="search-form" method="get">
                     <select class="search-option" name="option">
                         <option value="ALL" ${pageHandler.sc.option=='ALL' || pageHandler.sc.option=='' ? "selected" : ""}>
@@ -57,7 +58,7 @@
                                     value="${notice.title}"/></a>
                         </td>
 <%--                        <td class="writer"><c:out value="${notice.writer}"/></td>--%>
-                        <td class="regdate"><fmt:formatDate value="${notice.reg_date}" pattern="yy-MM-dd"/></td>
+                        <td class="regdate"><fmt:formatDate value="${notice.reg_date}" pattern="MM/dd"/></td>
 <%--                        <td class="viewcnt"><c:out value="${notice.view_cnt}"/></td>--%>
                     </tr>
                 </c:forEach>

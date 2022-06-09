@@ -15,22 +15,16 @@ input {
 }
 
 #noticeBoard .search-container {
-    background-color: rgb(253, 253, 250);
-    width: 100%;
-    height: 110px;
-    border: 1px solid #ddd;
-    margin-top: 10px;
-    margin-bottom: 30px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    padding: 30px;
+    margin-bottom: 15px;
 }
 
 #noticeBoard .search-form {
     height: 37px;
     display: flex;
-    margin: 0;
+    margin: 20px 0 0 0;
 }
 
 #noticeBoard .search-option {
@@ -73,9 +67,12 @@ input {
     cursor: pointer;
 }
 
+.main-title {
+    font-size: 30px;
+}
+
 .board-table {
     font-weight: 300;
-    margin-top: 80px;
     border-top: 1px solid;
 }
 .board-table th,
