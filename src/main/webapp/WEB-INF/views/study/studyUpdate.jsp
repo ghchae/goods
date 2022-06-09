@@ -11,16 +11,25 @@
 <body>
 <section>
     <div class="boardDetail">
-        <h2 class="writing-header">공지사항</h2>
-        <form id="noticeUpdateform">
-            <input type="hidden" name="bno" value="${notice.bno}">
-            <input type="text" name="title" value="${notice.title}"
+        <h2 class="writing-header">study</h2>
+        <form id="studyUpdateForm">
+            <input type="hidden" name="id" value="${study.id}">
+            <div>
+            <select name="category" id="category">
+                <option value="JAVA">JAVA</option>
+                <option value="SPRING">SPRING</option>
+                <option value="JS">JS</option>
+                <option value="DB">DB</option>
+                <option value="WEB">WEB</option>
+            </select>
+            <input type="text" name="title" value="${study.title}"
                    placeholder=" 제목을 입력해주세요.">
+            </div>
             <textarea name="content" rows="20"
-                      placeholder=" 내용을 입력해 주세요."><c:out value="${notice.content}"/></textarea>
+                      placeholder=" 내용을 입력해 주세요."><c:out value="${study.content}"/></textarea>
             <div>
                 <c:choose>
-                    <c:when test="${empty notice}">
+                    <c:when test="${empty list}">
                         <button type="button" id="writeBtn" class="btn"><i class="fa fa-pencil"></i> 등록</button>
                     </c:when>
                     <c:otherwise>
@@ -28,7 +37,7 @@
                         <button type="button" id="removeBtn" class="btn"><i class="fa fa-trash"></i> 삭제</button>
                     </c:otherwise>
                 </c:choose>
-            <button type="button" id="listBtn" class="btn"><i class="fa fa-bars"></i> 목록</button>
+                <button type="button" id="listBtn" class="btn"><i class="fa fa-bars"></i> 목록</button>
             </div>
         </form>
     </div>
@@ -38,57 +47,57 @@
 <%@ include file="/WEB-INF/views/footer.jsp" %>
 <script src=" <c:url value='/resources/js/common.js'/>"></script>
 <script>
-    let noticeProceed = true;
+    let studyProceed = true;
     $(document).ready(function () {
         $("#listBtn").click(function () {
-            location.href = "<c:url value='/notice/list'/>?page=${page}&pageSize=${pageSize}";
+            location.href = "<c:url value='/study/list'/>?page=${page}&pageSize=${pageSize}";
         });
 
         $("#writeBtn").click(function () {
-            let form = $('#noticeUpdateform');
-            form.attr("action", "<c:url value='/notice/write'/>")
+            let form = $('#studyUpdateForm');
+            form.attr("action", "<c:url value='/study/write'/>")
             form.attr("method", "post");
             form.submit();
         });
         $("#modifyBtn").click(function () {
-            noticeProceed = false;
+            studyProceed = false;
             if (!confirm("수정 하시겠습니까?")) {
-                noticeProceed = true;
+                studyProceed = true;
                 return;
             }
             $.ajax({
                 type: 'POST',
-                url: '/goods/notice/modify',
+                url: '/goods/study/modify',
                 headers: {"content-type": "application/json"},
                 dataType: 'text',
-                data: JSON.stringify(toJson("#noticeUpdateform")),
+                data: JSON.stringify(toJson("#studyUpdateForm")),
                 success: function (data) {
                     let result = JSON.parse(data);
                     if (result.result) {
                         /*success*/
                         alert("수정되었습니다.");
-                        window.location.href = "<c:url value='/notice/list'/>";
+                        window.location.href = "<c:url value='/study/list'/>";
                         return;
                     }
                     alert("수정에 실패했습니다.");
-                    noticeProceed = true;
+                    studyProceed = true;
                     return;
                 },
             });
         });
         $("#removeBtn").click(function () {
             if (!confirm("삭제 하시겠습니까?")) {
-                noticeProceed = true;
+                studyProceed = true;
                 return;
             }
             $.ajax({
                 type: 'POST',
-                url: '/goods/notice/remove',
+                url: '/goods/study/remove',
                 headers: {"content-type": "application/json"},
                 dataType: 'text',
                 data: JSON.stringify(
                     {
-                        bno: ${notice.bno}
+                        id: ${study.id}
                     }
                 ),
                 success: function (data) {
@@ -96,11 +105,11 @@
                     if (result.result) {
                         /*success*/
                         alert("삭제되었습니다.");
-                        window.location.href = "<c:url value='/notice/list'/>";
+                        window.location.href = "<c:url value='/study/list'/>";
                         return;
                     }
                     alert("삭제에 실패했습니다.");
-                    noticeProceed = true;
+                    studyProceed = true;
                     return;
                 },
             });

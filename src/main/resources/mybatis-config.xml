@@ -6,6 +6,7 @@
     <typeAliases>
         <typeAlias alias="UserDto" type="com.portfolio.goods.domain.User"/>
         <typeAlias alias="Board" type="com.portfolio.goods.domain.Board"/>
+        <typeAlias alias="Study" type="com.portfolio.goods.domain.Study"/>
         <typeAlias alias="SearchCondition" type="com.portfolio.goods.domain.SearchCondition"/>
     </typeAliases>
 </configuration>

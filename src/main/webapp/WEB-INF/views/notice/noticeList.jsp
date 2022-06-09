@@ -27,15 +27,6 @@
                         <input type="submit" class="search-button" value="검색">
                     </select>
                 </form>
-                <c:if test="${admin eq 'Y'}">
-                    <div>
-                        <button id="writeBtn" class="btn-write"
-                                onclick="location.href='<c:url
-                                        value="/notice/write?page=${pageHandler.sc.page}&pageSize=${pageHandler.sc.pageSize}&bno=${detail.bno}"/>'">
-                            <i class="fa fa-pencil"></i> 글쓰기
-                        </button>
-                    </div>
-                </c:if>
             </div>
             <table class="board-table">
                 <colgroup>
@@ -63,6 +54,15 @@
                     </tr>
                 </c:forEach>
             </table>
+            <c:if test="${admin eq 'Y'}">
+                <div id="write-inner">
+                    <button id="writeBtn" class="btn-write"
+                            onclick="location.href='<c:url
+                                    value="/notice/write?page=${pageHandler.sc.page}&pageSize=${pageHandler.sc.pageSize}&bno=${detail.bno}"/>'">
+                        <i class="fa fa-pencil"></i> 글쓰기
+                    </button>
+                </div>
+            </c:if>
             <br>
             <div class="paging-container">
                 <div class="paging">

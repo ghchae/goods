@@ -173,3 +173,7 @@ td {
     text-decoration: underline;
 }
 
+#write-inner {
+    text-align: right;
+    margin-top: 10px;
+}
