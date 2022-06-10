@@ -9,4 +9,8 @@ public interface StudyDao {
     List<Study> select(SearchCondition sc);
 
     int count();
+
+    int insert(Study study);
+
+    Study selectOne(Integer id);
 }

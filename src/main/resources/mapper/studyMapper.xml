@@ -24,8 +24,21 @@
         ORDER BY reg_date DESC, id DESC
         LIMIT #{offset}, #{pageSize}
     </select>
+
     <select id="count" resultType="int">
         select count(*)
         from study
     </select>
+
+    <insert id="insert" parameterType="Study">
+        insert into study (title, category, content, writer)
+        values (#{title}, #{category}, #{content}, #{writer})
+    </insert>
+
+    <select id="selectOne" parameterType="int" resultType="Study">
+        select *
+        from study
+        where id = #{id}
+    </select>
+
 </mapper>

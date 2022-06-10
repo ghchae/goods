@@ -2,12 +2,16 @@ package com.portfolio.goods.controller;
 
 import com.portfolio.goods.domain.PageHandler;
 import com.portfolio.goods.domain.SearchCondition;
+import com.portfolio.goods.domain.Study;
 import com.portfolio.goods.service.StudyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("/study")
@@ -27,12 +31,30 @@ public class StudyController {
     @GetMapping("/write")
     public String write(Integer id, SearchCondition sc, Model model) {
         System.out.println("write sc : " + sc);
-
+        model.addAttribute("page", sc.getPage());
+        model.addAttribute("pageSize", sc.getPageSize());
         return "/study/studyUpdate";
     }
 
+    @PostMapping("/write")
+    public String write(Study study, HttpSession session) {
+        System.out.println(study);
+        study.setWriter((String) session.getAttribute("userId"));
+        studyService.studyRegist(study);
+        return "redirect:/study/list";
+    }
+
     @GetMapping("/read")
-    public String read() {
-        return "";
+    public String read(Integer id, SearchCondition sc, Model model) {
+        Study studyDetail = studyService.studyDetail(id);
+        model.addAttribute("page", sc.getPage());
+        model.addAttribute("pageSize", sc.getPageSize());
+        model.addAttribute("study", studyDetail);
+        return "/study/studyDetail";
+    }
+
+    @GetMapping("/modify")
+    public String modify() {
+        return "/study/studyUpdate";
     }
 }

@@ -10,4 +10,8 @@ public interface StudyService {
     int studyListCount();
 
     List<Study> studyList(SearchCondition searchCondition);
+
+    int studyRegist(Study study);
+
+    Study studyDetail(Integer id);
 }

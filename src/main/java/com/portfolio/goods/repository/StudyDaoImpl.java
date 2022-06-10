@@ -25,4 +25,14 @@ public class StudyDaoImpl implements StudyDao {
     public int count() {
         return sqlSession.selectOne(namespace + "count");
     }
+
+    @Override
+    public int insert(Study study) {
+        return sqlSession.insert(namespace + "insert" , study);
+    }
+
+    @Override
+    public Study selectOne(Integer id) {
+        return sqlSession.selectOne(namespace + "selectOne", id);
+    }
 }

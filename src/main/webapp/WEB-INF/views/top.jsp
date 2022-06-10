@@ -32,14 +32,14 @@
                     </div>
                 </li>
                 <li>
-                    <a href="#none">공부</a>
+                    <a href="<c:url value='/study/list'/>">공부</a>
                     <div class="dropdown">
-                        <a href="#none">Java</a>
-                        <a href="#none">Spring</a>
-                        <a href="#none">JavaScript</a>
-                        <a href="#none">DataBase</a>
-                        <a href="#none">마이바티스</a>
-                        <a href="#none">Web</a>
+<%--                        <a href="#none">Java</a>--%>
+<%--                        <a href="#none">Spring</a>--%>
+<%--                        <a href="#none">JavaScript</a>--%>
+<%--                        <a href="#none">DataBase</a>--%>
+<%--                        <a href="#none">마이바티스</a>--%>
+<%--                        <a href="#none">Web</a>--%>
                     </div>
                 </li>
                 <li>

@@ -38,7 +38,7 @@
                         <td class="no"><c:out value="${study.id}"/></td>
                         <td class="title">
                             <a href="<c:url value='/study/read?id=${study.id}&page=${pageHandler.sc.page}&pageSize=${pageHandler.sc.pageSize}'/>"><c:out
-                                    value="${[study.category] + study.title}"/></a>
+                                    value="${'[' += study.category +=']' += study.title}"/></a>
                         </td>
                         <td class="regdate"><fmt:formatDate value="${study.reg_date}" pattern="yy-MM-dd"/></td>
                     </tr>

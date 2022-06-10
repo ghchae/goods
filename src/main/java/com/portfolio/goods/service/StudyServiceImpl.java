@@ -22,4 +22,14 @@ public class StudyServiceImpl implements StudyService {
     public List<Study> studyList(SearchCondition searchCondition) {
         return studyDao.select(searchCondition);
     }
+
+    @Override
+    public int studyRegist(Study study) {
+        return studyDao.insert(study);
+    }
+
+    @Override
+    public Study studyDetail(Integer id) {
+        return studyDao.selectOne(id);
+    }
 }

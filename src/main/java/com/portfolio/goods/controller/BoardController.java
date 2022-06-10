@@ -29,7 +29,8 @@ public class BoardController {
     }
 
     @GetMapping("/notice/write")
-    public String write(Integer bno, Integer page, Integer pageSize, Model model) {
+    public String write(Integer bno,SearchCondition sc, Integer page, Integer pageSize, Model model) {
+        System.out.println("board write : " + sc);
         Board noticeDetail = noticeService.noticeDetail(bno);
         model.addAttribute("page", page);
         model.addAttribute("pageSize", pageSize);
@@ -41,7 +42,7 @@ public class BoardController {
     public String write(Board notice, HttpSession session) {
 //        System.out.println(session.getId());/* Jsession ID*/
         notice.setWriter((String) session.getAttribute("userId"));
-        int bno = noticeService.noticeRegist(notice);
+        noticeService.noticeRegist(notice);
         return "redirect:/notice/list";
     }
 
