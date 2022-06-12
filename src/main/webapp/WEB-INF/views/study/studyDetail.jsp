@@ -14,10 +14,14 @@
         <h2 class="writing-header"><c:out value="${study.category}"/></h2>
         <form>
             <input type="hidden" name="bno" value="${study.id}">
-            <input type="text" name="title" value="${study.title}" readonly>
+            <div>
+                <c:out value="${study.title}"/>
+            </div>
+            <div>image</div>
             <textarea name="content" rows="20" readonly><c:out value="${study.content}"/></textarea>
             <c:if test='${study.writer eq userId}'>
-                <a href="<c:url value='/study/modify'/>?id=${study.id}&page=${page}&pageSize=${pageSize}" class="btn"><i class="fa fa-edit"></i> 수정</a>
+                <a href="<c:url value='/study/modify'/>?id=${study.id}&page=${page}&pageSize=${pageSize}" class="btn"><i
+                        class="fa fa-edit"></i> 수정</a>
             </c:if>
             <button type="button" id="listBtn" class="btn"><i class="fa fa-bars"></i> 목록</button>
         </form>
@@ -29,7 +33,7 @@
 <script>
     $(document).ready(function () {
         $("#listBtn").click(function () {
-            location.href="<c:url value='/study/list'/>?page=${page}&pageSize=${pageSize}";
+            location.href = "<c:url value='/study/list'/>?page=${page}&pageSize=${pageSize}";
         });
     });
 </script>
