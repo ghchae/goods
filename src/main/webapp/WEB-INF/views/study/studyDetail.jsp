@@ -19,7 +19,9 @@
             </div>
             <div>image</div>
             <hr/>
-            <c:out value="${study.content}"/>
+            <div>
+                <c:out value="${study.content}"/>
+            </div>
             <c:if test='${study.writer eq userId}'>
                 <a href="<c:url value='/study/modify'/>?id=${study.id}&page=${page}&pageSize=${pageSize}" class="btn"><i
                         class="fa fa-edit"></i> 수정</a>
