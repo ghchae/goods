@@ -6,20 +6,18 @@
 <head>
     <link rel="stylesheet" href="<c:url value='/resources/css/board.css'/>">
     <link rel="stylesheet" href="<c:url value='/resources/css/boardDetail.css'/>">
+    <link rel="stylesheet" href="<c:url value='/resources/css/studyDetail.css'/>">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 <body>
 <section>
-    <div class="boardDetail">
-        <h2 class="writing-header"><c:out value="${study.category}"/></h2>
+    <div class="boardDetail" id="studyDetail">
+        <h2 class="writing-header"><c:out value="${'[' += study.category += ']'}"/><span><c:out value="${study.title}"/></span></h2>
         <form>
             <input type="hidden" name="bno" value="${study.id}">
-            <div>
-                <c:out value="${study.title}"/>
-            </div>
-            <div>image</div>
+            <div class="image">image</div>
             <hr/>
-            <div>
+            <div class="content">
                 <c:out value="${study.content}"/>
             </div>
             <c:if test='${study.writer eq userId}'>
