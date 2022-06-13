@@ -16,7 +16,6 @@
         <form>
             <input type="hidden" name="bno" value="${study.id}">
             <div class="image">image</div>
-            <hr/>
             <div class="content">
                 <c:out value="${study.content}"/>
             </div>
