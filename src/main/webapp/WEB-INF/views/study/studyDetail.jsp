@@ -18,7 +18,8 @@
                 <c:out value="${study.title}"/>
             </div>
             <div>image</div>
-            <textarea name="content" rows="20" readonly><c:out value="${study.content}"/></textarea>
+            <hr/>
+            <c:out value="${study.content}"/>
             <c:if test='${study.writer eq userId}'>
                 <a href="<c:url value='/study/modify'/>?id=${study.id}&page=${page}&pageSize=${pageSize}" class="btn"><i
                         class="fa fa-edit"></i> 수정</a>
