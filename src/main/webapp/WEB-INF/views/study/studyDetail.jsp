@@ -15,7 +15,7 @@
         <h2 class="writing-header"><c:out value="${'[' += study.category += ']'}"/><span><c:out value="${study.title}"/></span></h2>
         <form>
             <input type="hidden" name="bno" value="${study.id}">
-            <div class="image">image</div>
+            <div class="image">이미지 파일 추가</div>
             <div class="content">
                 <c:out value="${study.content}"/>
             </div>
