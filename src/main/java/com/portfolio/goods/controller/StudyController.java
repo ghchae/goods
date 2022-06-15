@@ -1,6 +1,7 @@
 package com.portfolio.goods.controller;
 
 import com.portfolio.goods.domain.PageHandler;
+import com.portfolio.goods.domain.ResultMessage;
 import com.portfolio.goods.domain.SearchCondition;
 import com.portfolio.goods.domain.Study;
 import com.portfolio.goods.service.StudyService;
@@ -56,5 +57,10 @@ public class StudyController {
     @GetMapping("/modify")
     public String modify() {
         return "/study/studyUpdate";
+    }
+
+    @PostMapping("/modify")
+    public ResultMessage modify(Study study) {
+        return new ResultMessage();
     }
 }
