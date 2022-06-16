@@ -8,11 +8,10 @@ import com.portfolio.goods.service.StudyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
+import javax.xml.transform.Result;
 
 @Controller
 @RequestMapping("/study")
@@ -61,6 +60,11 @@ public class StudyController {
 
     @PostMapping("/modify")
     public ResultMessage modify(Study study) {
+        return new ResultMessage();
+    }
+
+    @PostMapping("/remove")
+    public @ResponseBody ResultMessage remove(@RequestBody Study study) {
         return new ResultMessage();
     }
 }
