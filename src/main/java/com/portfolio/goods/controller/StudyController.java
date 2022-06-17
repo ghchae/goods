@@ -59,7 +59,7 @@ public class StudyController {
     }
 
     @PostMapping("/modify")
-    public ResultMessage modify(Study study) {
+    public @ResponseBody ResultMessage modify(@RequestBody Study study) {
         return new ResultMessage();
     }
 
