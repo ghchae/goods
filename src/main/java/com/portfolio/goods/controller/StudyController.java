@@ -54,7 +54,7 @@ public class StudyController {
     }
 
     @GetMapping("/modify")
-    public String modify() {
+    public String modify(Study study, Model model) {
         return "/study/studyUpdate";
     }
 
