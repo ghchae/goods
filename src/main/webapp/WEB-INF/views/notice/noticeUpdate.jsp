@@ -38,6 +38,7 @@
 <%@ include file="/WEB-INF/views/footer.jsp" %>
 <script src=" <c:url value='/resources/js/common.js'/>"></script>
 <script>
+    let bno = ${notice.bno eq null ? '0' : notice.bno};
     let noticeProceed = true;
     $(document).ready(function () {
         $("#listBtn").click(function () {
@@ -86,11 +87,7 @@
                 url: '/goods/notice/remove',
                 headers: {"content-type": "application/json"},
                 dataType: 'text',
-                data: JSON.stringify(
-                    {
-                        bno: ${notice.bno}
-                    }
-                ),
+                data: JSON.stringify({"bno": bno}),
                 success: function (data) {
                     let result = JSON.parse(data);
                     if (result.result) {

@@ -177,3 +177,8 @@ td {
     text-align: right;
     margin-top: 10px;
 }
+
+#noticeDetail {
+    width: 50%;
+    margin: auto;
+}
