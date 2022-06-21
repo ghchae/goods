@@ -15,8 +15,12 @@
         <h2 class="writing-header"><c:out value="${'[' += study.category += ']'}"/><span><c:out value="${study.title}"/></span></h2>
         <form>
             <input type="hidden" name="bno" value="${study.id}">
-            <div class="image">이미지 파일 추가</div>
-            <div class="content">
+            <c:if test="${study.fileList ne null}">
+                <div class="image center pd50">
+                        <%--               <img src="<c:url value='/resources/images/face.jpg'/>">--%>
+                </div>
+            </c:if>
+            <div class="content center">
                 <c:out value="${study.content}"/>
             </div>
             <c:if test='${study.writer eq userId}'>
