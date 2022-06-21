@@ -17,11 +17,11 @@
             <input type="hidden" name="bno" value="${study.id}">
             <c:if test="${study.fileList ne null}">
                 <div class="image center pd50">
-                        <%--               <img src="<c:url value='/resources/images/face.jpg'/>">--%>
+                        <%--<img src="<c:url value='/resources/images/face.jpg'/>">--%>
                 </div>
             </c:if>
-            <div class="content center">
-                <c:out value="${study.content}"/>
+            <div class="content center" contenteditable="true">
+                <pre><c:out value='${study.content}' /></pre>
             </div>
             <c:if test='${study.writer eq userId}'>
                 <a href="<c:url value='/study/modify'/>?id=${study.id}&page=${page}&pageSize=${pageSize}" class="btn"><i

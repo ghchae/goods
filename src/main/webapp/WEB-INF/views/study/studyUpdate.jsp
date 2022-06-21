@@ -6,6 +6,7 @@
 <head>
     <link rel="stylesheet" href="<c:url value='/resources/css/board.css'/>">
     <link rel="stylesheet" href="<c:url value='/resources/css/boardDetail.css'/>">
+    <link rel="stylesheet" href="<c:url value='/resources/css/studyDetail.css'/>">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 <body>
@@ -26,21 +27,30 @@
                 <input type="text" name="title" value="${study.title}"
                        placeholder=" 제목을 입력해주세요.">
             </div>
+            <div id="photoUploadBtn"> >사진 첨부하기< </div>
+            <div id="imgs_wrap"></div>
             <textarea name="content" rows="20"
                       placeholder=" 내용을 입력해 주세요."><c:out value="${study.content}"/></textarea>
-            <div>
-                <c:choose>
-                    <c:when test="${empty study}">
-                        <button type="button" id="writeBtn" class="btn"><i class="fa fa-pencil"></i> 등록</button>
-                    </c:when>
-                    <c:otherwise>
-                        <button type="button" id="modifyBtn" class="btn"><i class="fa fa-edit"></i> 수정</button>
-                        <button type="button" id="removeBtn" class="btn"><i class="fa fa-trash"></i> 삭제</button>
-                    </c:otherwise>
-                </c:choose>
-                <button type="button" id="listBtn" class="btn"><i class="fa fa-bars"></i> 목록</button>
-            </div>
         </form>
+        <div>
+            <%--파일을 전송하기위해 form 태그필요--%>
+            <form id="fileForm" name="fileForm" enctype="multipart/form-data">
+                <%--파일을 선택하는 태그 , 파일선택 UI (type=file) --%>
+                <input multiple="multiple" type="file" name="filename[]" class="hidden" id="fileName" accept="image/*"/>
+            </form>
+        </div>
+        <div>
+            <c:choose>
+                <c:when test="${empty study}">
+                    <button type="button" id="writeBtn" class="btn"><i class="fa fa-pencil"></i> 등록</button>
+                </c:when>
+                <c:otherwise>
+                    <button type="button" id="modifyBtn" class="btn"><i class="fa fa-edit"></i> 수정</button>
+                    <button type="button" id="removeBtn" class="btn"><i class="fa fa-trash"></i> 삭제</button>
+                </c:otherwise>
+            </c:choose>
+            <button type="button" id="listBtn" class="btn"><i class="fa fa-bars"></i> 목록</button>
+        </div>
     </div>
 </section>
 </body>
@@ -87,4 +97,34 @@
             });
         });
     });
+    $("#photoUploadBtn").click(function() {
+        $("#fileName").click();
+    });
+    let newFileList = [];
+    $("#fileName").change(function() {
+        $(".newPhoto").remove();
+        newFileList = [];
+        for (let i = 0; i < this.files.length; i++) {
+            let image = this.files[i];
+            newFileList.push(image);
+            showThumbnail(image, i);
+        }
+    });
+
+    let showThumbnail = function(image, i) {
+        let reader = new FileReader();
+        reader.onload = function(event) {
+            let img = $('<div class="photo newPhoto"></div>');
+            img.data("index", i);
+            let deleteButton = $('<div></div>');
+            deleteButton.addClass("photoDelete").click(function() {
+                newFileList.splice($(this).parent().data("index"), 1);
+                $(this).parent().remove();
+            });
+            img.append(deleteButton);
+            img.append('<img src="' + event.target.result + '" width="80" height="80" alt="사진">');
+            $("#imgs_wrap").append(img);
+        };
+        reader.readAsDataURL(image);
+    };
 </script>
