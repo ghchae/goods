@@ -9,14 +9,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.xml.transform.Result;
+import java.io.IOException;
 
 @Controller
 @RequestMapping("/study")
 public class StudyController {
-
     @Autowired
     StudyService studyService;
 
@@ -37,11 +39,11 @@ public class StudyController {
     }
 
     @PostMapping("/write")
-    public String write(Study study, HttpSession session) {
+    public @ResponseBody ResultMessage write(@RequestBody Study study, HttpSession session) {
         System.out.println(study);
         study.setWriter((String) session.getAttribute("userId"));
         studyService.studyRegist(study);
-        return "redirect:/study/list";
+        return new ResultMessage();
     }
 
     @GetMapping("/read")
@@ -54,7 +56,7 @@ public class StudyController {
     }
 
     @GetMapping("/modify")
-    public String modify(Study study,Integer id, SearchCondition sc, Model model) {
+    public String modify(Study study, Integer id, SearchCondition sc, Model model) {
         model.addAttribute("page", sc.getPage());
         model.addAttribute("pageSize", sc.getPageSize());
         return "/study/studyUpdate";
@@ -68,5 +70,12 @@ public class StudyController {
     @PostMapping("/remove")
     public @ResponseBody ResultMessage remove(@RequestBody Study study) {
         return new ResultMessage();
+    }
+
+    @PostMapping("/fileUpload")
+    public @ResponseBody ResultMessage fileUpload(MultipartHttpServletRequest multiRequest) throws IOException {
+        System.out.println("FileUpload start");
+        System.out.println("multiRequest : " + multiRequest);
+        return studyService.studyFileUpload(multiRequest);
     }
 }
