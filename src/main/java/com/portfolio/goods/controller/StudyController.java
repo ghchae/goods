@@ -40,10 +40,10 @@ public class StudyController {
 
     @PostMapping("/write")
     public @ResponseBody ResultMessage write(@RequestBody Study study, HttpSession session) {
-        System.out.println(study);
         study.setWriter((String) session.getAttribute("userId"));
-        studyService.studyRegist(study);
-        return new ResultMessage();
+        ResultMessage result = new ResultMessage(studyService.studyRegist(study));
+        System.out.println(result);
+        return result;
     }
 
     @GetMapping("/read")
@@ -74,7 +74,6 @@ public class StudyController {
 
     @PostMapping("/fileUpload")
     public @ResponseBody ResultMessage fileUpload(MultipartHttpServletRequest multiRequest) throws IOException {
-        System.out.println("FileUpload start");
         System.out.println("multiRequest : " + multiRequest);
         return studyService.studyFileUpload(multiRequest);
     }

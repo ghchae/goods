@@ -1,15 +1,15 @@
 package com.portfolio.goods.domain;
 
 public class AttachFile {
-    private Integer id;
+    private String id;
     private String originName;
-    private String pathName;
+    private String fileName;
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -21,20 +21,20 @@ public class AttachFile {
         this.originName = originName;
     }
 
-    public String getPathName() {
-        return pathName;
+    public String getFileName() {
+        return fileName;
     }
 
-    public void setPathName(String pathName) {
-        this.pathName = pathName;
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
     }
 
     @Override
     public String toString() {
         return "AttachFile{" +
-                "id=" + id +
+                "id='" + id + '\'' +
                 ", originName='" + originName + '\'' +
-                ", pathName='" + pathName + '\'' +
+                ", fileName='" + fileName + '\'' +
                 '}';
     }
 }

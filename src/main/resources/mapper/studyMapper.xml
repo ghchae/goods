@@ -30,7 +30,7 @@
         from study
     </select>
 
-    <insert id="insert" parameterType="Study">
+    <insert id="insert" parameterType="Study" useGeneratedKeys="true" keyProperty="id">
         insert into study (title, category, content, writer)
         values (#{title}, #{category}, #{content}, #{writer})
     </insert>
@@ -40,5 +40,10 @@
         from study
         where id = #{id}
     </select>
+
+    <insert id="fileInsert" parameterType="AttachFile">
+        insert into study_file (studyId, originName, fileName)
+        values (#{id}, #{originName}, #{fileName})
+    </insert>
 
 </mapper>

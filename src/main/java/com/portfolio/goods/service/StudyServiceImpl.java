@@ -1,6 +1,7 @@
 package com.portfolio.goods.service;
 
 import com.portfolio.goods.dao.StudyDao;
+import com.portfolio.goods.domain.AttachFile;
 import com.portfolio.goods.domain.ResultMessage;
 import com.portfolio.goods.domain.SearchCondition;
 import com.portfolio.goods.domain.Study;
@@ -33,7 +34,9 @@ public class StudyServiceImpl implements StudyService {
 
     @Override
     public int studyRegist(Study study) {
-        return studyDao.insert(study);
+        studyDao.insert(study);
+        System.out.println("등록후 study Id : " + study.getId());
+        return study.getId();
     }
 
     @Override
@@ -58,6 +61,11 @@ public class StudyServiceImpl implements StudyService {
         File file = new File(realpath + "/studyFile/" + fileName);
         multipartFile.transferTo(file);
         System.out.println("origin:" + originalFileName + " , ext : " + ext + ", fileName : " + fileName);
+        AttachFile attachFile = new AttachFile();
+        attachFile.setId(multiRequest.getParameter("id"));
+        attachFile.setFileName(realpath + "/studyFile/" + fileName);
+        attachFile.setOriginName(originalFileName);
+        studyDao.fileInsert(attachFile);
         return new ResultMessage(true, fileName);
     }
 }

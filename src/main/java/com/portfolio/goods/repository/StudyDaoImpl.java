@@ -1,6 +1,7 @@
 package com.portfolio.goods.repository;
 
 import com.portfolio.goods.dao.StudyDao;
+import com.portfolio.goods.domain.AttachFile;
 import com.portfolio.goods.domain.SearchCondition;
 import com.portfolio.goods.domain.Study;
 import org.apache.ibatis.session.SqlSession;
@@ -34,5 +35,10 @@ public class StudyDaoImpl implements StudyDao {
     @Override
     public Study selectOne(Integer id) {
         return sqlSession.selectOne(namespace + "selectOne", id);
+    }
+
+    @Override
+    public void fileInsert(AttachFile attachFile) {
+        sqlSession.insert(namespace + "fileInsert", attachFile);
     }
 }

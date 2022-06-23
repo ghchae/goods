@@ -60,7 +60,7 @@
 <script>
     let studyProceed = true;
     let newFileList = [];
-    let fileUpload = function() {
+    let fileUpload = function(data) {
         let file = $("#fileName")[0].files[0];
         if (file.size < 10) {
             alert("정상적인 파일을 업로드 해주세요.");
@@ -74,7 +74,7 @@
         }
         let formData = new FormData();
         formData.append('file', file);
-        console.log("여기까진됨");
+        formData.append('id', data);
         $.ajax({
             type: 'POST',
             data: formData,
@@ -110,7 +110,8 @@
                         console.log("공부게시글 디비 등록 완료");
                         if ($("#fileName").val() != "") {
                             console.log("파일업로드 시작");
-                            fileUpload();
+                            console.log("공부 게시글 id : " + result.message);
+                            fileUpload(result.message);
                             return;
                         }
                         window.location.href = "<c:url value='/study/list'/>";
