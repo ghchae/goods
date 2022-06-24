@@ -37,6 +37,7 @@
 
     <select id="selectOne" parameterType="int" resultType="Study">
         select study.id
+             , study.writer
              , study.title
              , study.content
              , study.category
