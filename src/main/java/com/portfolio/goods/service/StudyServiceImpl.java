@@ -49,7 +49,13 @@ public class StudyServiceImpl implements StudyService {
         String path = "/temp";
         ServletContext context = multiRequest.getSession().getServletContext();
         String realpath = context.getRealPath(path);
-        System.out.println("context : " + context + "realPath : " + realpath);
+//        String realpath ="C:/apache-tomcat-9.0.54/webapps/upload";
+
+        System.out.println("session : " + multiRequest.getSession());
+        System.out.println("context : " + context);
+        System.out.println("realPath : " + realpath);
+        System.out.println("fileSeporator : " + File.separator);
+
 
         MultipartFile multipartFile = multiRequest.getFile("file");
         if ((multipartFile == null) || multipartFile.isEmpty()) {

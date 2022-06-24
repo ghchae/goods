@@ -83,7 +83,7 @@
             contentType: false,
             processData: false,
             success: function (data) {
-                console.log(data);
+                window.location.href = "<c:url value='/study/list'/>";
                 return;
             },
         });
@@ -107,10 +107,7 @@
                     let result = JSON.parse(data);
                     if (result.result) {
                         /*success*/
-                        console.log("공부게시글 디비 등록 완료");
                         if ($("#fileName").val() != "") {
-                            console.log("파일업로드 시작");
-                            console.log("공부 게시글 id : " + result.message);
                             fileUpload(result.message);
                             return;
                         }

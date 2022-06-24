@@ -24,4 +24,10 @@ public class StudyDaoImplTest {
         List<Study> studyList = studyDao.select(sc);
         System.out.println(studyList);
     }
+
+    @Test
+    public void selectOne() {
+        System.out.println(studyDao.selectOne(18));;
+    }
+
 }

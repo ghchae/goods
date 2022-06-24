@@ -36,9 +36,18 @@
     </insert>
 
     <select id="selectOne" parameterType="int" resultType="Study">
-        select *
-        from study
-        where id = #{id}
+        select study.id
+             , study.title
+             , study.content
+             , study.category
+             , file.id as "file.id"
+             , file.originName as "file.originName"
+             , file.fileName as "file.fileName"
+        from study study
+                 left outer join study_file file
+                                 on
+                                     file.studyId = study.id
+        where study.id = #{id}
     </select>
 
     <insert id="fileInsert" parameterType="AttachFile">

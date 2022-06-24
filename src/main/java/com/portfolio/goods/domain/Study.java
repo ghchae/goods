@@ -14,6 +14,7 @@ public class Study {
     private Date up_date;
     private List<AttachFile> fileList;
 
+    private AttachFile file;
     public Integer getId() {
         return id;
     }
@@ -86,6 +87,14 @@ public class Study {
         this.fileList = fileList;
     }
 
+    public AttachFile getFile() {
+        return file;
+    }
+
+    public void setFile(AttachFile file) {
+        this.file = file;
+    }
+
     @Override
     public String toString() {
         return "Study{" +
@@ -98,6 +107,7 @@ public class Study {
                 ", reg_date=" + reg_date +
                 ", up_date=" + up_date +
                 ", fileList=" + fileList +
+                ", file=" + file +
                 '}';
     }
 }
