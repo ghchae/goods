@@ -17,8 +17,7 @@
             <input type="hidden" name="id" value="${study.id}">
             <c:if test="${study.file ne null}">
                 <div class="image center pd50">
-                        <img src="<c:url value='${study.file.fileName}'/>">
-<%--                        <img src="<c:url value='http://localhost:8080/temp'/>">--%>
+                        <img src="<c:url value='${"/image/" += study.file.fileName}'/>">
                 </div>
             </c:if>
             <div class="content center" contenteditable="true">
