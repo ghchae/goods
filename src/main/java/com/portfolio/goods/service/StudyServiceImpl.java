@@ -46,16 +46,13 @@ public class StudyServiceImpl implements StudyService {
 
     @Override
     public ResultMessage studyFileUpload(MultipartHttpServletRequest multiRequest) throws IOException {
-        String path = "/temp";
-        ServletContext context = multiRequest.getSession().getServletContext();
-        String realpath = context.getRealPath(path);
-//        String realpath ="C:/apache-tomcat-9.0.54/webapps/upload";
-
-        System.out.println("session : " + multiRequest.getSession());
-        System.out.println("context : " + context);
-        System.out.println("realPath : " + realpath);
-        System.out.println("fileSeporator : " + File.separator);
-
+        /*
+            String path = "/temp";
+            ServletContext context = multiRequest.getSession().getServletContext();
+            String realpath = context.getRealPath(path);// C:\apache-tomcat-9.0.54\webapps\goods\
+            System.out.println("fileSeporator : " + File.separator);
+         */
+        String filePath = "C:/upload";
 
         MultipartFile multipartFile = multiRequest.getFile("file");
         if ((multipartFile == null) || multipartFile.isEmpty()) {
@@ -64,12 +61,12 @@ public class StudyServiceImpl implements StudyService {
         String originalFileName = multipartFile.getOriginalFilename().replace("\r", "").replace("\n", "");
         String ext = originalFileName.substring(originalFileName.lastIndexOf('.') + 1);
         String fileName = "STUDYFILE_" + System.currentTimeMillis() + "." + ext;
-        File file = new File(realpath + "/studyFile/" + fileName);
+        File file = new File(filePath + "/studyFile/" + fileName);
         multipartFile.transferTo(file);
         System.out.println("origin:" + originalFileName + " , ext : " + ext + ", fileName : " + fileName);
         AttachFile attachFile = new AttachFile();
         attachFile.setId(multiRequest.getParameter("id"));
-        attachFile.setFileName(realpath + "/studyFile/" + fileName);
+        attachFile.setFileName("studyFile/" + fileName);
         attachFile.setOriginName(originalFileName);
         studyDao.fileInsert(attachFile);
         return new ResultMessage(true, fileName);
