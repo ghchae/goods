@@ -71,7 +71,7 @@ public class StudyController {
 
     @PostMapping("/remove")
     public @ResponseBody ResultMessage remove(@RequestBody Study study) {
-        return new ResultMessage();
+        return studyService.studyRemove(study.getId());
     }
 
     @PostMapping("/fileUpload")

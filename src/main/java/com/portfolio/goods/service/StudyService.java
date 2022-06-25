@@ -20,4 +20,6 @@ public interface StudyService {
     Study studyDetail(Integer id);
 
     ResultMessage studyFileUpload(MultipartHttpServletRequest multiRequest) throws IOException;
+
+    ResultMessage studyRemove(Integer id);
 }

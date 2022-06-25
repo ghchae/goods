@@ -30,4 +30,10 @@ public class StudyDaoImplTest {
         System.out.println(studyDao.selectOne(18));;
     }
 
+    @Test
+    public void delete() {
+        studyDao.deleteFile(22);
+        studyDao.delete(22);
+    }
+
 }

@@ -83,7 +83,7 @@
         });
         $("#removeBtn").click(function () {
             if (!noticeProceed) {
-                alert("수정중입니다.");
+                alert("삭제중입니다.");
                 return;
             }
             noticeProceed = false;

@@ -199,5 +199,24 @@
             studyProceed = true;
             return;
         }
+        $.ajax({
+            type: 'POST',
+            url: '/goods/study/remove',
+            headers: {"content-type": "application/json"},
+            dataType: 'text',
+            data: JSON.stringify({"id" : ${study.id}}),
+            success: function (data) {
+                let result = JSON.parse(data);
+                if (result.result) {
+                    /*success*/
+                    alert("수정되었습니다.");
+                    window.location.href = "<c:url value='/study/list'/>";
+                    return;
+                }
+                alert("수정에 실패했습니다.");
+                studyProceed = true;
+                return;
+            },
+        });
     });
 </script>

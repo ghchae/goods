@@ -41,9 +41,9 @@
              , study.title
              , study.content
              , study.category
-             , file.id as "file.id"
+             , file.id         as "file.id"
              , file.originName as "file.originName"
-             , file.fileName as "file.fileName"
+             , file.fileName   as "file.fileName"
         from study study
                  left outer join study_file file
                                  on
@@ -55,5 +55,23 @@
         insert into study_file (studyId, originName, fileName)
         values (#{id}, #{originName}, #{fileName})
     </insert>
+
+    <delete id="delete" parameterType="Integer">
+        delete
+        from study
+        where id = #{id}
+    </delete>
+
+    <select id="selectFile" parameterType="Integer" resultType="int">
+        select count(*)
+        from study_file
+        where studyId = #{id}
+    </select>
+
+    <delete id="deleteFile" parameterType="Integer">
+        delete
+        from study_file
+        where studyId = #{id}
+    </delete>
 
 </mapper>

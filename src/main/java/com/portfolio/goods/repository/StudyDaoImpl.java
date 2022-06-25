@@ -19,7 +19,7 @@ public class StudyDaoImpl implements StudyDao {
 
     @Override
     public List<Study> select(SearchCondition sc) {
-        return sqlSession.selectList(namespace + "select" , sc);
+        return sqlSession.selectList(namespace + "select", sc);
     }
 
     @Override
@@ -29,7 +29,7 @@ public class StudyDaoImpl implements StudyDao {
 
     @Override
     public int insert(Study study) {
-        return sqlSession.insert(namespace + "insert" , study);
+        return sqlSession.insert(namespace + "insert", study);
     }
 
     @Override
@@ -40,5 +40,20 @@ public class StudyDaoImpl implements StudyDao {
     @Override
     public void fileInsert(AttachFile attachFile) {
         sqlSession.insert(namespace + "fileInsert", attachFile);
+    }
+
+    @Override
+    public void delete(Integer id) {
+        sqlSession.delete(namespace + "delete", id);
+    }
+
+    @Override
+    public int selectFile(Integer id) {
+        return sqlSession.selectOne(namespace + "selectFile", id);
+    }
+
+    @Override
+    public void deleteFile(Integer id) {
+        sqlSession.delete(namespace + "deleteFile", id);
     }
 }

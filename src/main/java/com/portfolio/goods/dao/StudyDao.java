@@ -1,6 +1,7 @@
 package com.portfolio.goods.dao;
 
 import com.portfolio.goods.domain.AttachFile;
+import com.portfolio.goods.domain.ResultMessage;
 import com.portfolio.goods.domain.SearchCondition;
 import com.portfolio.goods.domain.Study;
 
@@ -16,4 +17,10 @@ public interface StudyDao {
     Study selectOne(Integer id);
 
     void fileInsert(AttachFile attachFile);
+
+    void delete(Integer id);
+
+    int selectFile(Integer id);
+
+    void deleteFile(Integer id);
 }

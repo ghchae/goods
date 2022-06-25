@@ -71,4 +71,15 @@ public class StudyServiceImpl implements StudyService {
         studyDao.fileInsert(attachFile);
         return new ResultMessage(true, fileName);
     }
+
+    @Override
+    public ResultMessage studyRemove(Integer id) {
+        // 파일있으면, 파일지워야한다.
+        int result = studyDao.selectFile(id);
+        if(result > 0 ) {
+            studyDao.deleteFile(id);
+        }
+        studyDao.delete(id);
+        return new ResultMessage();
+    }
 }
