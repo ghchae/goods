@@ -52,6 +52,10 @@
             form.submit();
         });
         $("#modifyBtn").click(function () {
+            if (!noticeProceed) {
+                alert("수정중입니다.");
+                return;
+            }
             noticeProceed = false;
             if (!confirm("수정 하시겠습니까?")) {
                 noticeProceed = true;
@@ -78,6 +82,11 @@
             });
         });
         $("#removeBtn").click(function () {
+            if (!noticeProceed) {
+                alert("수정중입니다.");
+                return;
+            }
+            noticeProceed = false;
             if (!confirm("삭제 하시겠습니까?")) {
                 noticeProceed = true;
                 return;

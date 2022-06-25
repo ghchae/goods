@@ -97,6 +97,11 @@
             <%--form.attr("action", "<c:url value='/study/write'/>")--%>
             // form.attr("method", "post");
             // form.submit();
+            if(!studyProceed) {
+                alert("등록중입니다.");
+                return;
+            }
+            studyProceed = false;
             $.ajax({
                 type: 'POST',
                 url: '/goods/study/write',
@@ -153,6 +158,10 @@
         };
 
         $("#modifyBtn").click(function () {
+            if(!studyProceed) {
+                alert("수정중입니다.");
+                return;
+            }
             studyProceed = false;
             if (!confirm("수정 하시겠습니까?")) {
                 studyProceed = true;
@@ -178,5 +187,17 @@
                 },
             });
         });
+    });
+
+    $("#removeBtn").click(function () {
+        if(!studyProceed) {
+            alert("삭제중입니다.");
+            return;
+        }
+        studyProceed = false;
+        if (!confirm("삭제 하시겠습니까?")) {
+            studyProceed = true;
+            return;
+        }
     });
 </script>
