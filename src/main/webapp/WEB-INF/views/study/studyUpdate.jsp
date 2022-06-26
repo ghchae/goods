@@ -58,6 +58,7 @@
 <%@ include file="/WEB-INF/views/footer.jsp" %>
 <script src=" <c:url value='/resources/js/common.js'/>"></script>
 <script>
+    let studyId = ${study.id eq null ? '0' : study.id};
     let studyProceed = true;
     let newFileList = [];
     let fileUpload = function(data) {
@@ -204,7 +205,7 @@
             url: '/goods/study/remove',
             headers: {"content-type": "application/json"},
             dataType: 'text',
-            data: JSON.stringify({"id" : ${study.id}}),
+            data: JSON.stringify({"id" : studyId}),
             success: function (data) {
                 let result = JSON.parse(data);
                 if (result.result) {

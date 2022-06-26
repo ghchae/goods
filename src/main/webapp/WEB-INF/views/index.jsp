@@ -6,6 +6,16 @@
 <head>
     <title>메인페이지</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <style>
+        .mainPhotoImg {
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
 </head>
 <body>
 <!-- section -->
@@ -32,12 +42,6 @@
             </div>
             <div class="item">
                 <div class="photo">
-<%--                    <a href="#none">--%>
-<%--                        <img src="<c:url value='/resources/images/item-02.jpg'/>">--%>
-<%--                    </a>--%>
-<%--                    <a href="#none">--%>
-<%--                        <img src="<c:url value='/resources/images/item-02-hover.jpg'/>">--%>
-<%--                    </a>--%>
                 </div>
                 <div class="detail">
                     <%--<span class="price"><b>10<small>%</small></b>-</span>--%>
@@ -48,28 +52,27 @@
             </div>
             <div class="item">
                 <div class="photo">
-<%--                    <a href="#none">--%>
-<%--                        <img src="<c:url value='/resources/images/item-03.jpg'/>">--%>
-<%--                    </a>--%>
-<%--                    <a href="#none">--%>
-<%--                        <img src="<c:url value='/resources/images/item-03-hover.jpg'/>">--%>
-<%--                    </a>--%>
+                    <c:if test="${JS.file.id ne ''}">
+                        <img class="mainPhotoImg" src="<c:url value='${"/image/" += JS.file.fileName}'/>">
+                    </c:if>
                 </div>
                 <div class="detail">
                     <%--<span class="price"><b>10<small>%</small></b>-</span>--%>
-                    <span class="name">JavaScript</span>
-                    <span class="count"><b>조회</b>0</span>
-                    <span class="like"></span>
+                    <c:choose>
+                        <c:when test="${JS ne null}">
+                            <span class="name"><c:out value="${'[' += JS.category += ']' += JS.title}"/></span>
+                            <span class="count"><b>조회</b>0</span>
+                            <span class="like"></span>
+                        </c:when>
+                        <c:otherwise>
+                            <span>게시물이 없습니다.</span>
+                        </c:otherwise>
+                    </c:choose>
+
                 </div>
             </div>
             <div class="item">
                 <div class="photo">
-<%--                    <a href="#none">--%>
-<%--                        <img src="<c:url value='/resources/images/item-04.jpg'/>">--%>
-<%--                    </a>--%>
-<%--                    <a href="#none">--%>
-<%--                        <img src="<c:url value='/resources/images/item-04-hover.jpg'/>">--%>
-<%--                    </a>--%>
                 </div>
                 <div class="detail">
                     <%--<span class="price"><b>10<small>%</small></b>-</span>--%>
@@ -80,12 +83,6 @@
             </div>
             <div class="item">
                 <div class="photo">
-<%--                    <a href="#none">--%>
-<%--                        <img src="<c:url value='/resources/images/item-05.jpg'/>">--%>
-<%--                    </a>--%>
-<%--                    <a href="#none">--%>
-<%--                        <img src="<c:url value='/resources/images/item-05-hover.jpg'/>">--%>
-<%--                    </a>--%>
                 </div>
                 <div class="detail">
                     <%--<span class="price"><b>0<small>%</small></b>-</span>--%>

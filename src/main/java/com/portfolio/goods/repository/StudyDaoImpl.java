@@ -56,4 +56,9 @@ public class StudyDaoImpl implements StudyDao {
     public void deleteFile(Integer id) {
         sqlSession.delete(namespace + "deleteFile", id);
     }
+
+    @Override
+    public Study selectByCategory(String category) {
+        return sqlSession.selectOne(namespace + "selectByCategory", category);
+    }
 }

@@ -23,4 +23,6 @@ public interface StudyDao {
     int selectFile(Integer id);
 
     void deleteFile(Integer id);
+
+    Study selectByCategory(String category);
 }

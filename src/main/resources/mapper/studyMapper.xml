@@ -74,4 +74,21 @@
         where studyId = #{id}
     </delete>
 
+    <select id="selectByCategory" parameterType="String" resultType="Study">
+        select study.id
+             , study.writer
+             , study.title
+             , study.content
+             , study.category
+             , file.id         as "file.id"
+             , file.originName as "file.originName"
+             , file.fileName   as "file.fileName"
+        from study study
+                 left outer join study_file file
+                                 on
+                                     file.studyId = study.id
+        where category = #{category}
+        order by study.reg_date desc limit 1
+    </select>
+
 </mapper>

@@ -82,4 +82,9 @@ public class StudyServiceImpl implements StudyService {
         studyDao.delete(id);
         return new ResultMessage();
     }
+
+    @Override
+    public Study studyListByCategory(String category) {
+        return studyDao.selectByCategory(category);
+    }
 }

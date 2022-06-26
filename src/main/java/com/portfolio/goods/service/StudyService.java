@@ -22,4 +22,6 @@ public interface StudyService {
     ResultMessage studyFileUpload(MultipartHttpServletRequest multiRequest) throws IOException;
 
     ResultMessage studyRemove(Integer id);
+
+    Study studyListByCategory(String category);
 }
