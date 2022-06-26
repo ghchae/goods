@@ -26,33 +26,27 @@
         <div class="items">
             <div class="item">
                 <div class="photo">
-<%--                    <a href="#none">--%>
-<%--                        <img src="<c:url value='/resources/images/item-01.jpg'/>">--%>
-<%--                    </a>--%>
-<%--                    <a href="#none">--%>
-<%--                        <img src="<c:url value='/resources/images/item-01-hover.jpg'/>">--%>
-<%--                    </a>--%>
+                    <c:if test="${JAVA.file ne null}">
+                        <img class="mainPhotoImg" src="<c:url value='${"/image/" += JAVA.file.fileName}'/>">
+                    </c:if>
                 </div>
                 <div class="detail">
                     <%--<span class="price"><b>10<small>%</small></b>-</span>--%>
-                    <span class="name">Java</span>
-                    <span class="count"><b>조회</b>0</span>
-                    <span class="like"></span>
+                    <c:choose>
+                        <c:when test="${JAVA ne null}">
+                            <span class="name"><c:out value="${'[' += JAVA.category += ']' += JAVA.title}"/></span>
+                            <span class="count"><b>조회</b>0</span>
+                            <span class="like"></span>
+                        </c:when>
+                        <c:otherwise>
+                            <span>게시물이 없습니다.</span>
+                        </c:otherwise>
+                    </c:choose>
                 </div>
             </div>
             <div class="item">
                 <div class="photo">
-                </div>
-                <div class="detail">
-                    <%--<span class="price"><b>10<small>%</small></b>-</span>--%>
-                    <span class="name">Spring</span>
-                    <span class="count"><b>조회</b>0</span>
-                    <span class="like"></span>
-                </div>
-            </div>
-            <div class="item">
-                <div class="photo">
-                    <c:if test="${JS.file.id ne ''}">
+                    <c:if test="${JS.file ne null}">
                         <img class="mainPhotoImg" src="<c:url value='${"/image/" += JS.file.fileName}'/>">
                     </c:if>
                 </div>
@@ -68,27 +62,66 @@
                             <span>게시물이 없습니다.</span>
                         </c:otherwise>
                     </c:choose>
-
                 </div>
             </div>
             <div class="item">
                 <div class="photo">
+                    <c:if test="${SPRING.file ne null}">
+                        <img class="mainPhotoImg" src="<c:url value='${"/image/" += SPRING.file.fileName}'/>">
+                    </c:if>
                 </div>
                 <div class="detail">
                     <%--<span class="price"><b>10<small>%</small></b>-</span>--%>
-                    <span class="name">DataBase</span>
-                    <span class="count"><b>조회</b>0</span>
-                    <span class="like"></span>
+                    <c:choose>
+                        <c:when test="${SPRING ne null}">
+                            <span class="name"><c:out value="${'[' += SPRING.category += ']' += SPRING.title}"/></span>
+                            <span class="count"><b>조회</b>0</span>
+                            <span class="like"></span>
+                        </c:when>
+                        <c:otherwise>
+                            <span>게시물이 없습니다.</span>
+                        </c:otherwise>
+                    </c:choose>
                 </div>
             </div>
             <div class="item">
                 <div class="photo">
+                    <c:if test="${WEB.file ne null}">
+                        <img class="mainPhotoImg" src="<c:url value='${"/image/" += WEB.file.fileName}'/>">
+                    </c:if>
                 </div>
                 <div class="detail">
-                    <%--<span class="price"><b>0<small>%</small></b>-</span>--%>
-                    <span class="name">Web</span>
-                    <span class="count"><b>조회</b>0</span>
-                    <span class="like"></span>
+                    <%--<span class="price"><b>10<small>%</small></b>-</span>--%>
+                    <c:choose>
+                        <c:when test="${WEB ne null}">
+                            <span class="name"><c:out value="${'[' += WEB.category += ']' += WEB.title}"/></span>
+                            <span class="count"><b>조회</b>0</span>
+                            <span class="like"></span>
+                        </c:when>
+                        <c:otherwise>
+                            <span>게시물이 없습니다.</span>
+                        </c:otherwise>
+                    </c:choose>
+                </div>
+            </div>
+            <div class="item">
+                <div class="photo">
+                    <c:if test="${DB.file ne null}">
+                        <img class="mainPhotoImg" src="<c:url value='${"/image/" += DB.file.fileName}'/>">
+                    </c:if>
+                </div>
+                <div class="detail">
+                    <%--<span class="price"><b>10<small>%</small></b>-</span>--%>
+                    <c:choose>
+                        <c:when test="${DB ne null}">
+                            <span class="name"><c:out value="${'[' += DB.category += ']' += DB.title}"/></span>
+                            <span class="count"><b>조회</b>0</span>
+                            <span class="like"></span>
+                        </c:when>
+                        <c:otherwise>
+                            <span>게시물이 없습니다.</span>
+                        </c:otherwise>
+                    </c:choose>
                 </div>
             </div>
         </div>

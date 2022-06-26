@@ -21,7 +21,11 @@ public class MainController {
         SearchCondition sc = new SearchCondition();
         sc.setPageSize(5);
         model.addAttribute("noticeList", noticeService.noticeList(sc));
+        model.addAttribute("JAVA", studyService.studyListByCategory("JAVA"));
         model.addAttribute("JS", studyService.studyListByCategory("JS"));
+        model.addAttribute("SPRING", studyService.studyListByCategory("SPRING"));
+        model.addAttribute("WEB", studyService.studyListByCategory("WEB"));
+        model.addAttribute("DB", studyService.studyListByCategory("DB"));
         return "index";
     }
 
