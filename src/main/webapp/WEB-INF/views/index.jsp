@@ -27,7 +27,7 @@
             <div class="item">
                 <div class="photo">
                     <c:if test="${JAVA.file ne null}">
-                        <a href="<c:url value='/study/read?id=${study.id}'/>">
+                        <a href="<c:url value='/study/read?id=${JAVA.id}'/>">
                             <img class="mainPhotoImg" src="<c:url value='${"/image/" += JAVA.file.fileName}'/>">
                         </a>
                     </c:if>
@@ -49,7 +49,9 @@
             <div class="item">
                 <div class="photo">
                     <c:if test="${JS.file ne null}">
+                        <a href="<c:url value='/study/read?id=${JS.id}'/>">
                         <img class="mainPhotoImg" src="<c:url value='${"/image/" += JS.file.fileName}'/>">
+                        </a>
                     </c:if>
                 </div>
                 <div class="detail">
@@ -69,7 +71,9 @@
             <div class="item">
                 <div class="photo">
                     <c:if test="${SPRING.file ne null}">
+                        <a href="<c:url value='/study/read?id=${SPRING.id}'/>">
                         <img class="mainPhotoImg" src="<c:url value='${"/image/" += SPRING.file.fileName}'/>">
+                        </a>
                     </c:if>
                 </div>
                 <div class="detail">
@@ -89,7 +93,9 @@
             <div class="item">
                 <div class="photo">
                     <c:if test="${WEB.file ne null}">
+                        <a href="<c:url value='/study/read?id=${WEB.id}'/>">
                         <img class="mainPhotoImg" src="<c:url value='${"/image/" += WEB.file.fileName}'/>">
+                        </a>
                     </c:if>
                 </div>
                 <div class="detail">
@@ -109,7 +115,9 @@
             <div class="item">
                 <div class="photo">
                     <c:if test="${DB.file ne null}">
+                        <a href="<c:url value='/study/read?id=${DB.id}'/>">
                         <img class="mainPhotoImg" src="<c:url value='${"/image/" += DB.file.fileName}'/>">
+                        </a>
                     </c:if>
                 </div>
                 <div class="detail">

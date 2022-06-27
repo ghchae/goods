@@ -254,15 +254,14 @@ h1,h2,h3,h4,h5,h6 {
 .item .photo a img {
     position: absolute;
     width: 100%;
-    z-index: -2;
     transition: 0.9s;
 }
-.item .photo a:first-child img {
-    z-index: -1;
-}
-.item .photo:hover a:first-child img {
-    opacity: 0;
-}
+/*.item .photo a:first-child img {*/
+/*    z-index: -1;*/
+/*}*/
+/*.item .photo:hover a:first-child img {*/
+/*    opacity: 0;*/
+/*}*/
 
 .item .detail {
     position: relative;
