@@ -27,7 +27,9 @@
             <div class="item">
                 <div class="photo">
                     <c:if test="${JAVA.file ne null}">
-                        <img class="mainPhotoImg" src="<c:url value='${"/image/" += JAVA.file.fileName}'/>">
+                        <a href="<c:url value='/study/read?id=${study.id}'/>">
+                            <img class="mainPhotoImg" src="<c:url value='${"/image/" += JAVA.file.fileName}'/>">
+                        </a>
                     </c:if>
                 </div>
                 <div class="detail">

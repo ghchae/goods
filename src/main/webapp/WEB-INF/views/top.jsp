@@ -45,9 +45,9 @@
                 <li>
                     <a href="#none">프로젝트</a>
                     <div class="dropdown">
-                        <a href="#none">쇼핑몰</a>
+                        <%--<a href="#none">쇼핑몰</a>
                         <a href="#none">길찾기</a>
-                        <a href="#none">홈페이지</a>
+                        <a href="#none">홈페이지</a>--%>
                     </div>
                 </li>
                 <li>
