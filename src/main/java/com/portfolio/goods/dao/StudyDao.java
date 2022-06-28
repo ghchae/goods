@@ -25,4 +25,6 @@ public interface StudyDao {
     void deleteFile(Integer id);
 
     Study selectByCategory(String category);
+
+    void updateCount(Integer id);
 }

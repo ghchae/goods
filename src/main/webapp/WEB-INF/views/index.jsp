@@ -50,7 +50,7 @@
                     <c:choose>
                         <c:when test="${JAVA ne null}">
                             <span class="name"><c:out value="${'[' += JAVA.category += ']' += JAVA.title}"/></span>
-                            <span class="count"><b>조회</b>0</span>
+                            <span class="count"><b>조회</b><c:out value="${JAVA.view_cnt}"/></span>
                             <span class="like"></span>
                         </c:when>
                         <c:otherwise>
@@ -72,7 +72,7 @@
                     <c:choose>
                         <c:when test="${JS ne null}">
                             <span class="name"><c:out value="${'[' += JS.category += ']' += JS.title}"/></span>
-                            <span class="count"><b>조회</b>0</span>
+                            <span class="count"><b>조회</b><c:out value="${JS.view_cnt}"/></span>
                             <span class="like"></span>
                         </c:when>
                         <c:otherwise>
@@ -94,7 +94,7 @@
                     <c:choose>
                         <c:when test="${SPRING ne null}">
                             <span class="name"><c:out value="${'[' += SPRING.category += ']' += SPRING.title}"/></span>
-                            <span class="count"><b>조회</b>0</span>
+                            <span class="count"><b>조회</b><c:out value="${SPRING.view_cnt}"/></span>
                             <span class="like"></span>
                         </c:when>
                         <c:otherwise>
@@ -116,7 +116,7 @@
                     <c:choose>
                         <c:when test="${WEB ne null}">
                             <span class="name"><c:out value="${'[' += WEB.category += ']' += WEB.title}"/></span>
-                            <span class="count"><b>조회</b>0</span>
+                            <span class="count"><b>조회</b><c:out value="${WEB.view_cnt}"/></span>
                             <span class="like"></span>
                         </c:when>
                         <c:otherwise>
@@ -138,7 +138,7 @@
                     <c:choose>
                         <c:when test="${DB ne null}">
                             <span class="name"><c:out value="${'[' += DB.category += ']' += DB.title}"/></span>
-                            <span class="count"><b>조회</b>0</span>
+                            <span class="count"><b>조회</b><c:out value="${DB.view_cnt}"/></span>
                             <span class="like"></span>
                         </c:when>
                         <c:otherwise>

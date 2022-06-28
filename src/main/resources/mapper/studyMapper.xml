@@ -80,6 +80,7 @@
              , study.title
              , study.content
              , study.category
+             , study.view_cnt
              , file.id         as "file.id"
              , file.originName as "file.originName"
              , file.fileName   as "file.fileName"
@@ -90,5 +91,11 @@
         where category = #{category}
         order by study.reg_date desc limit 1
     </select>
+
+    <update id="updateCount">
+        UPDATE study
+        SET view_cnt = view_cnt + 1
+        WHERE id = #{id}
+    </update>
 
 </mapper>

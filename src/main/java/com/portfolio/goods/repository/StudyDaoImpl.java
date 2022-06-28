@@ -61,4 +61,9 @@ public class StudyDaoImpl implements StudyDao {
     public Study selectByCategory(String category) {
         return sqlSession.selectOne(namespace + "selectByCategory", category);
     }
+
+    @Override
+    public void updateCount(Integer id) {
+        sqlSession.update(namespace + "updateCount", id);
+    }
 }

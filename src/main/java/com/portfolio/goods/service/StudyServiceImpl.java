@@ -41,6 +41,7 @@ public class StudyServiceImpl implements StudyService {
 
     @Override
     public Study studyDetail(Integer id) {
+        studyDao.updateCount(id);
         return studyDao.selectOne(id);
     }
 
