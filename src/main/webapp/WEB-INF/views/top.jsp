@@ -43,7 +43,7 @@
                     </div>
                 </li>
                 <li>
-                    <a href="#none">프로젝트</a>
+                    <a href="#none">컨텐츠</a>
                     <div class="dropdown">
                         <%--<a href="#none">쇼핑몰</a>
                         <a href="#none">길찾기</a>

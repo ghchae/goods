@@ -16,11 +16,11 @@
         <form>
             <input type="hidden" name="id" value="${study.id}">
             <c:if test="${study.file ne null}">
-                <div class="image center pd50">
+                <div class="image center pt50">
                         <img src="<c:url value='${"/image/" += study.file.fileName}'/>">
                 </div>
             </c:if>
-            <div class="content center" contenteditable="true">
+            <div class="content" contenteditable="true">
                 <pre><c:out value='${study.content}' /></pre>
             </div>
             <c:if test='${study.writer eq userId}'>
