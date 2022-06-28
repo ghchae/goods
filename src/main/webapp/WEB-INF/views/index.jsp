@@ -7,6 +7,9 @@
     <title>메인페이지</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <style>
+        .relative {
+            position: relative;
+        }
         .mainPhotoImg {
             width: 150px;
             height: 150px;
@@ -14,6 +17,16 @@
             top: 55%;
             left: 50%;
             transform: translate(-50%, -50%);
+        }
+        #location-user {
+            position: absolute;
+            height: 35px;
+            width: 35px;
+            top: 5px;
+            left: 1px;
+            text-align: center;
+            cursor: pointer;
+            z-index: 10;
         }
     </style>
 </head>
@@ -228,19 +241,43 @@
                 </c:if>
             </table>
         </div>
-        <div class="event">
-            <div class="title">
-                <h2>이벤트</h2>
-                <a href="#event">더보기</a>
+        <div class="event relative">
+            <div id="map" style="width:400px;height:300px;"></div>
+            <div id="location-user">
+                <img src="<c:url value='/resources/images/icon_current.png'/>" width="24px" height="24px" alt="현재 위치" />
             </div>
-            <table>
-                <tr>
-                    <td>이벤트가 없습니다.</td>
-                </tr>
-            </table>
         </div>
     </div>
 </section>
 </body>
 </html>
 <%@ include file="/WEB-INF/views/footer.jsp" %>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=403876214b2b4e2831bfd3c552a62d41"></script>
+<script>
+    let container = document.getElementById('map');
+    let options = {
+        center: new kakao.maps.LatLng(33.450701, 126.570667),
+        level: 3
+    };
+    let map = new kakao.maps.Map(container, options);
+
+    let locationLoadSuccess = function (pos) {
+        let currentPos = new kakao.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
+        map.panTo(currentPos);
+        let marker = new kakao.maps.Marker({
+            position: currentPos
+        });
+        marker.setMap(null);//기존마커제거
+        marker.setMap(map);
+    };
+
+    let locationLoadError = function (pos) {
+        alert("현재 위치 정보를 가져오는데 실패했습니다.");
+    };
+    navigator.geolocation.getCurrentPosition(locationLoadSuccess, locationLoadError);
+
+    $("#location-user").click(function() {
+        navigator.geolocation.getCurrentPosition(locationLoadSuccess, locationLoadError);
+    });
+
+</script>
