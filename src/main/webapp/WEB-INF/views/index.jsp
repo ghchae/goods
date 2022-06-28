@@ -272,12 +272,12 @@
     };
 
     let locationLoadError = function (pos) {
-        alert("현재 위치 정보를 가져오는데 실패했습니다.");
+        alert("http에서는 현재 위치 정보를 가져올수 없습니다.");
     };
     navigator.geolocation.getCurrentPosition(locationLoadSuccess, locationLoadError);
 
     $("#location-user").click(function() {
         navigator.geolocation.getCurrentPosition(locationLoadSuccess, locationLoadError);
     });
-
 </script>
+
