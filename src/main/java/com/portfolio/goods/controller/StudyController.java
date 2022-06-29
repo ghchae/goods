@@ -66,7 +66,7 @@ public class StudyController {
 
     @PostMapping("/modify")
     public @ResponseBody ResultMessage modify(@RequestBody Study study) {
-        return new ResultMessage();
+        return studyService.studyModify(study);
     }
 
     @PostMapping("/remove")

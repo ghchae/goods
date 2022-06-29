@@ -90,4 +90,13 @@
         WHERE id = #{id}
     </update>
 
+    <update id="modify" parameterType="Study">
+        UPDATE study
+        SET title   = #{title}
+          , category = #{category}
+          , content = #{content}
+          , up_date = now()
+        WHERE id = #{id}
+    </update>
+
 </mapper>

@@ -88,4 +88,10 @@ public class StudyServiceImpl implements StudyService {
     public Study studyListByCategory(String category) {
         return studyDao.selectByCategory(category);
     }
+
+    @Override
+    public ResultMessage studyModify(Study study) {
+        studyDao.modify(study);
+        return new ResultMessage();
+    }
 }

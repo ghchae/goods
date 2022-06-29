@@ -6,7 +6,6 @@ import com.portfolio.goods.domain.SearchCondition;
 import com.portfolio.goods.domain.Study;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
-import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.util.List;
 
@@ -24,4 +23,6 @@ public interface StudyService {
     ResultMessage studyRemove(Integer id);
 
     Study studyListByCategory(String category);
+
+    ResultMessage studyModify(Study study);
 }

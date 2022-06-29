@@ -66,4 +66,9 @@ public class StudyDaoImpl implements StudyDao {
     public void updateCount(Integer id) {
         sqlSession.update(namespace + "updateCount", id);
     }
+
+    @Override
+    public void modify(Study study) {
+        sqlSession.update(namespace + "modify", study);
+    }
 }

@@ -27,4 +27,6 @@ public interface StudyDao {
     Study selectByCategory(String category);
 
     void updateCount(Integer id);
+
+    void modify(Study study);
 }
