@@ -10,6 +10,7 @@
         .relative {
             position: relative;
         }
+
         .mainPhotoImg {
             width: 150px;
             height: 150px;
@@ -18,6 +19,7 @@
             left: 50%;
             transform: translate(-50%, -50%);
         }
+
         #location-user {
             position: absolute;
             height: 35px;
@@ -38,13 +40,21 @@
         <h2>Study</h2>
         <div class="items">
             <div class="item">
-                <div class="photo">
-                    <c:if test="${JAVA.file ne null}">
+                <c:choose>
+                    <c:when test="${JAVA.file ne null}">
+                        <div class="photo">
+                            <a href="<c:url value='/study/read?id=${JAVA.id}'/>">
+                                <img class="mainPhotoImg" src="<c:url value='${"/image/" += JAVA.file.fileName}'/>">
+                            </a>
+                        </div>
+                    </c:when>
+                    <c:otherwise>
                         <a href="<c:url value='/study/read?id=${JAVA.id}'/>">
-                            <img class="mainPhotoImg" src="<c:url value='${"/image/" += JAVA.file.fileName}'/>">
+                            <div class="photo">
+                            </div>
                         </a>
-                    </c:if>
-                </div>
+                    </c:otherwise>
+                </c:choose>
                 <div class="detail">
                     <%--<span class="price"><b>10<small>%</small></b>-</span>--%>
                     <c:choose>
@@ -60,13 +70,21 @@
                 </div>
             </div>
             <div class="item">
-                <div class="photo">
-                    <c:if test="${JS.file ne null}">
+                <c:choose>
+                    <c:when test="${JS.file ne null}">
+                        <div class="photo">
+                            <a href="<c:url value='/study/read?id=${JS.id}'/>">
+                                <img class="mainPhotoImg" src="<c:url value='${"/image/" += JS.file.fileName}'/>">
+                            </a>
+                        </div>
+                    </c:when>
+                    <c:otherwise>
                         <a href="<c:url value='/study/read?id=${JS.id}'/>">
-                        <img class="mainPhotoImg" src="<c:url value='${"/image/" += JS.file.fileName}'/>">
+                            <div class="photo">
+                            </div>
                         </a>
-                    </c:if>
-                </div>
+                    </c:otherwise>
+                </c:choose>
                 <div class="detail">
                     <%--<span class="price"><b>10<small>%</small></b>-</span>--%>
                     <c:choose>
@@ -82,13 +100,21 @@
                 </div>
             </div>
             <div class="item">
-                <div class="photo">
-                    <c:if test="${SPRING.file ne null}">
+                <c:choose>
+                    <c:when test="${SPRING.file ne null}">
+                        <div class="photo">
+                            <a href="<c:url value='/study/read?id=${SPRING.id}'/>">
+                                <img class="mainPhotoImg" src="<c:url value='${"/image/" += SPRING.file.fileName}'/>">
+                            </a>
+                        </div>
+                    </c:when>
+                    <c:otherwise>
                         <a href="<c:url value='/study/read?id=${SPRING.id}'/>">
-                        <img class="mainPhotoImg" src="<c:url value='${"/image/" += SPRING.file.fileName}'/>">
+                            <div class="photo">
+                            </div>
                         </a>
-                    </c:if>
-                </div>
+                    </c:otherwise>
+                </c:choose>
                 <div class="detail">
                     <%--<span class="price"><b>10<small>%</small></b>-</span>--%>
                     <c:choose>
@@ -104,13 +130,21 @@
                 </div>
             </div>
             <div class="item">
-                <div class="photo">
-                    <c:if test="${WEB.file ne null}">
+                <c:choose>
+                    <c:when test="${WEB.file ne null}">
+                        <div class="photo">
+                            <a href="<c:url value='/study/read?id=${WEB.id}'/>">
+                                <img class="mainPhotoImg" src="<c:url value='${"/image/" += WEB.file.fileName}'/>">
+                            </a>
+                        </div>
+                    </c:when>
+                    <c:otherwise>
                         <a href="<c:url value='/study/read?id=${WEB.id}'/>">
-                        <img class="mainPhotoImg" src="<c:url value='${"/image/" += WEB.file.fileName}'/>">
+                            <div class="photo">
+                            </div>
                         </a>
-                    </c:if>
-                </div>
+                    </c:otherwise>
+                </c:choose>
                 <div class="detail">
                     <%--<span class="price"><b>10<small>%</small></b>-</span>--%>
                     <c:choose>
@@ -126,13 +160,21 @@
                 </div>
             </div>
             <div class="item">
-                <div class="photo">
-                    <c:if test="${DB.file ne null}">
+                <c:choose>
+                    <c:when test="${DB.file ne null}">
+                        <div class="photo">
+                            <a href="<c:url value='/study/read?id=${DB.id}'/>">
+                                <img class="mainPhotoImg" src="<c:url value='${"/image/" += DB.file.fileName}'/>">
+                            </a>
+                        </div>
+                    </c:when>
+                    <c:otherwise>
                         <a href="<c:url value='/study/read?id=${DB.id}'/>">
-                        <img class="mainPhotoImg" src="<c:url value='${"/image/" += DB.file.fileName}'/>">
+                            <div class="photo">
+                            </div>
                         </a>
-                    </c:if>
-                </div>
+                    </c:otherwise>
+                </c:choose>
                 <div class="detail">
                     <%--<span class="price"><b>10<small>%</small></b>-</span>--%>
                     <c:choose>
@@ -225,14 +267,15 @@
             </div>
             <table>
                 <c:forEach items="${noticeList}" var="notice">
-                   <tr>
-                       <td>
-                           <a href="<c:url value='/notice/read?bno=${notice.bno}'/>"><c:out value="${notice.title}"/></a>
-                       </td>
-                       <td>
-                           <fmt:formatDate value="${notice.reg_date}" pattern="yy-MM-dd"/>
-                       </td>
-                   </tr>
+                    <tr>
+                        <td>
+                            <a href="<c:url value='/notice/read?bno=${notice.bno}'/>"><c:out
+                                    value="${notice.title}"/></a>
+                        </td>
+                        <td>
+                            <fmt:formatDate value="${notice.reg_date}" pattern="yy-MM-dd"/>
+                        </td>
+                    </tr>
                 </c:forEach>
                 <c:if test="${empty noticeList}">
                     <td>
@@ -244,7 +287,7 @@
         <div class="event relative">
             <div id="map" style="width:400px;height:300px;"></div>
             <div id="location-user">
-                <img src="<c:url value='/resources/images/icon_current.png'/>" width="24px" height="24px" alt="현재 위치" />
+                <img src="<c:url value='/resources/images/icon_current.png'/>" width="24px" height="24px" alt="현재 위치"/>
             </div>
         </div>
     </div>
@@ -276,7 +319,7 @@
     };
     navigator.geolocation.getCurrentPosition(locationLoadSuccess, locationLoadError);
 
-    $("#location-user").click(function() {
+    $("#location-user").click(function () {
         navigator.geolocation.getCurrentPosition(locationLoadSuccess, locationLoadError);
     });
 </script>
