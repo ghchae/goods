@@ -16,6 +16,7 @@ public class SearchCondition {
     /* offset값은 현재 0 인데, offset은 page, pagesize로 계산되는 값이다. */
     /* 그래서 굳이 iv로 저장할 필요없다. -> 따라서 offset값을 읽을때 page,pageSize필드를 이용해 계산해줘야한다. */
 
+    private String category = "";
     public SearchCondition() {
     }
 
@@ -24,6 +25,13 @@ public class SearchCondition {
         this.pageSize = pageSize;
         this.option = option;
         this.keyword = keyword;
+    }
+    public SearchCondition(Integer page, Integer pageSize, String option, String keyword, String category) {
+        this.page = page;
+        this.pageSize = pageSize;
+        this.option = option;
+        this.keyword = keyword;
+        this.category = category;
     }
 
     /* 컨트롤러가 매개변수로 Sc를 받는데, 검색결과내용을 받다가 목록으로 돌아갈때 이 값들을 유지해야함 */
@@ -78,6 +86,14 @@ public class SearchCondition {
         return (page - 1) * pageSize;
     }
 
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
     @Override
     public String toString() {
         return "SearchCondition{" +
@@ -85,7 +101,7 @@ public class SearchCondition {
                 ", pageSize=" + pageSize +
                 ", option='" + option + '\'' +
                 ", keyword='" + keyword + '\'' +
-                ", offset=" + getOffset() +
+                ", category='" + category + '\'' +
                 '}';
     }
 }

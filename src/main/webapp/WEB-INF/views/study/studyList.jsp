@@ -15,16 +15,18 @@
             <div class="search-container">
                 <div class="main-title">study</div>
                 <form action="<c:url value="/study/list"/>" class="search-form" method="get">
-                    <select class="search-option" name="option">
-                        <option value="ALL" ${pageHandler.sc.option=='ALL' || pageHandler.sc.option=='' ? "selected" : ""}>
-                            제목+내용
-                        </option>
-                        <option value="TITLE" ${pageHandler.sc.option=='TITLE' ? "selected" : ""}>제목만</option>
-                        <input type="text" name="keyword" class="search-input" type="text"
-                               value="${pageHandler.sc.keyword}"
-                               placeholder="검색어를 입력해주세요">
-                        <input type="submit" class="search-button" value="검색">
+                    <select class="search-option" name="category">
+                        <option value="" ${pageHandler.sc.category == '' ? "selected" : ""}>전체</option>
+                        <option value="JAVA" ${pageHandler.sc.category == 'JAVA' ? "selected" : ""}>JAVA</option>
+                        <option value="SPRING" ${pageHandler.sc.category == 'SPRING' ? "selected" : ""}>SPRING</option>
+                        <option value="JS" ${pageHandler.sc.category == 'JS' ? "selected" : ""}>JS</option>
+                        <option value="WEB" ${pageHandler.sc.category == 'WEB' ? "selected" : ""}>WEB</option>
+                        <option value="DB" ${pageHandler.sc.category == 'DB' ? "selected" : ""}>DB</option>
                     </select>
+                    <input type="text" name="keyword" class="search-input" type="text"
+                           value="${pageHandler.sc.keyword}"
+                           placeholder="검색어를 입력해주세요">
+                    <input type="submit" class="search-button" value="검색">
                 </form>
             </div>
             <table class="board-table">

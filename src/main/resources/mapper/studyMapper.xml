@@ -5,18 +5,10 @@
     <sql id="searchCondition">
         FROM study
         WHERE true
-        <choose>
-            <when test='option=="TITLE"'>
-                AND title LIKE concat('%', #{keyword}, '%')
-            </when>
-            <when test='option=="WRITER"'>
-                AND writer LIKE concat('%', #{keyword}, '%')
-            </when>
-            <otherwise>
-                AND title LIKE concat('%', #{keyword}, '%')
-                OR writer LIKE concat('%', #{keyword}, '%')
-            </otherwise>
-        </choose>
+        <if test='category != ""'>
+            AND category = #{category}
+        </if>
+        AND title LIKE concat('%', #{keyword}, '%')
     </sql>
     <select id="select" parameterType="SearchCondition" resultType="Study">
         select *

@@ -20,6 +20,7 @@ public class StudyDaoImplTest {
     @Test
     public void select() {
         SearchCondition sc = new SearchCondition(1,10,"","");
+        sc.setCategory("JAVA");
         System.out.println(sc);
         List<Study> studyList = studyDao.select(sc);
         System.out.println(studyList);
