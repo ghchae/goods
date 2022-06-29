@@ -57,10 +57,9 @@ public class StudyController {
 
     @GetMapping("/modify")
     public String modify(Integer id, SearchCondition sc, Model model) {
-        Study studyDetail = studyService.studyDetail(id);
         model.addAttribute("page", sc.getPage());
         model.addAttribute("pageSize", sc.getPageSize());
-        model.addAttribute("study", studyDetail);
+        model.addAttribute("study", studyService.studyDetail(id));
         return "/study/studyUpdate";
     }
 
