@@ -27,7 +27,18 @@
                 <input type="text" name="title" value="${study.title}"
                        placeholder=" 제목을 입력해주세요.">
             </div>
-            <span id="photoUploadBtn"><i class="xi-camera"></i> 사진 첨부하기</span>
+            <c:choose>
+                <c:when test="${study.file eq null}">
+                    <span id="photoUploadBtn"><i class="xi-camera"></i> 사진 첨부하기</span>
+                </c:when>
+                <c:otherwise>
+                    <div class="photo newPhoto">
+                        <div class="deleteButton"></div>
+                        <img src="<c:url value='${"/image/" += study.file.fileName}'/>" width='80' height='80' alt='사진'>
+                    </div>
+                    <span id="photoUploadBtn"><i class="xi-camera"></i> 사진 첨부하기</span>
+                </c:otherwise>
+            </c:choose>
             <div id="imgs_wrap"></div>
             <textarea name="content" rows="20"
                       placeholder=" 내용을 입력해 주세요."><c:out value="${study.content}"/></textarea>
