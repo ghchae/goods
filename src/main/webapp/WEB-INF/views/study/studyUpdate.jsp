@@ -33,7 +33,7 @@
                 </c:when>
                 <c:otherwise>
                     <div class="photo newPhoto">
-                        <div class="deleteButton"></div>
+                        <div class="photoDelete"></div>
                         <img src="<c:url value='${"/image/" += study.file.fileName}'/>" width='80' height='80' alt='사진'>
                     </div>
                     <span id="photoUploadBtn"><i class="xi-camera"></i> 사진 첨부하기</span>
