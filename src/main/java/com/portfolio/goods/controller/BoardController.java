@@ -30,7 +30,6 @@ public class BoardController {
 
     @GetMapping("/notice/write")
     public String write(Integer bno,SearchCondition sc, Integer page, Integer pageSize, Model model) {
-        System.out.println("board write : " + sc);
         Board noticeDetail = noticeService.noticeDetail(bno);
         model.addAttribute("page", page);
         model.addAttribute("pageSize", pageSize);

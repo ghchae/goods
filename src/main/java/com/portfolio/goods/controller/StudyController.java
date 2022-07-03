@@ -32,7 +32,6 @@ public class StudyController {
 
     @GetMapping("/write")
     public String write(Integer id, SearchCondition sc, Model model) {
-        System.out.println("write sc : " + sc);
         model.addAttribute("page", sc.getPage());
         model.addAttribute("pageSize", sc.getPageSize());
         return "/study/studyUpdate";

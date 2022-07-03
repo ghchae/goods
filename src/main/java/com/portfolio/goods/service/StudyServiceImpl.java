@@ -91,6 +91,9 @@ public class StudyServiceImpl implements StudyService {
 
     @Override
     public ResultMessage studyModify(Study study) {
+        /* 기존 파일이 없을때 */
+        /* 기존 파일이 있을때, 파일을 수정 하지 않음*/
+        /* 기존 파일이 있을때, 파일을 수정*/
         studyDao.modify(study);
         return new ResultMessage();
     }
