@@ -35,7 +35,6 @@ public class StudyServiceImpl implements StudyService {
     @Override
     public int studyRegist(Study study) {
         studyDao.insert(study);
-        System.out.println("등록후 study Id : " + study.getId());
         return study.getId();
     }
 
@@ -76,12 +75,19 @@ public class StudyServiceImpl implements StudyService {
     @Override
     public ResultMessage studyRemove(Integer id) {
         // 파일있으면, 파일지워야한다.
-        int result = studyDao.selectFile(id);
-        if(result > 0 ) {
-            studyDao.deleteFile(id);
-        }
+        fileProceed(id);
         studyDao.delete(id);
         return new ResultMessage();
+    }
+
+    private void fileProceed(Integer id) {
+        if (findFile(id) > 0) {
+            studyDao.deleteFile(id);
+        }
+    }
+
+    private int findFile(Integer id) {
+        return studyDao.selectFile(id);
     }
 
     @Override
