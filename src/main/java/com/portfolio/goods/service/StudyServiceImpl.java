@@ -63,7 +63,6 @@ public class StudyServiceImpl implements StudyService {
         String fileName = "STUDYFILE_" + System.currentTimeMillis() + "." + ext;
         File file = new File(filePath + "/studyFile/" + fileName);
         multipartFile.transferTo(file);
-        System.out.println("origin:" + originalFileName + " , ext : " + ext + ", fileName : " + fileName);
         AttachFile attachFile = new AttachFile();
         attachFile.setId(multiRequest.getParameter("id"));
         attachFile.setFileName("studyFile/" + fileName);

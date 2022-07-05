@@ -34,9 +34,9 @@ public class UserServiceImpl implements UserService {
         if (loginUser == null) {
             return new ResultObject(false, "가입된 아이디가 없습니다.");
         }
-        if (!loginUser.getPassword().equals(user.getPassword())){
+        if (!loginUser.getPassword().equals(user.getPassword())) {
             return new ResultObject(false, "비밀번호가 틀렸습니다.");
         }
-            return new ResultObject(true, loginUser);
+        return new ResultObject(true, loginUser);
     }
 }
