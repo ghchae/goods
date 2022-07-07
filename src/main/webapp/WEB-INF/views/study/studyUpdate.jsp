@@ -24,6 +24,7 @@
                     <option value="WEB">WEB</option>
                     <option value="AWS">AWS</option>
                     <option value="EGOV">EGOV</option>
+                    <option value="FILE">FILE</option>
                 </select>
                 <input type="text" name="title" value="${study.title}"
                        placeholder=" 제목을 입력해주세요.">
