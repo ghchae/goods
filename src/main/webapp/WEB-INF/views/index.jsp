@@ -195,7 +195,7 @@
 <section id="section2">
     <div class="section2-inner">
         <h1 class="heading">
-            Goods selection
+            Contents
         </h1>
         <div class="goods">
             <div class="good">
