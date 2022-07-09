@@ -11,6 +11,14 @@
     <title>최단 경로</title>
 </head>
 <body>
-
+<section>
+    <div>
+        <h2 class="writing-header"></h2>
+        <form>
+            <input type="text" name="start" value="">
+            <input type="text" name="end" value="">
+        </form>
+    </div>
+</section>
 </body>
 </html>
