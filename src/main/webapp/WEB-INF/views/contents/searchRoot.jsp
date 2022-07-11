@@ -16,6 +16,7 @@
         <h2 class="writing-header"></h2>
         <form>
             <input type="text" name="start" value="cookie_value1">
+            <input type="text" name="middle" value="cookie_value3">
             <input type="text" name="end" value="cookie_value2">
         </form>
     </div>
