@@ -14,10 +14,11 @@
 <section>
     <div>
         <h2 class="writing-header"></h2>
-        <form>
-            <input type="text" name="start" value="cookie_value1">
-            <input type="text" name="middle" value="cookie_value3">
-            <input type="text" name="end" value="cookie_value2">
+        <form action="/contents/searchPath" method="post">
+            <input type="text" name="start" value="cookie_value1"/>
+            <input type="text" name="middle" value="cookie_value3"/>
+            <input type="text" name="end" value="cookie_value2"/>
+            <input type="submit" value="길찾기"/>
         </form>
     </div>
 </section>
